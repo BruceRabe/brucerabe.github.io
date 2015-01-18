@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Bruce Rabe is a UX/UI designer/developer in the Boston area">
+    <meta name="keywords" content="uxd,javascript,angular,storage">
+    <!--meta property="og:image" content="http://brucerabe.com/public/logo.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <title>
+      Dashboard &middot;
+      Bruce Rabe
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hyde.css">
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <!-- Icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png"-->
+    <!--link rel="shortcut icon" href="/public/favicon.png"-->
+
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>Bruce Rabe</h1>
+        <button class='mobile-toggle'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <div class='toggle-content'>
+          <div class="lead">UX/UI Designer/Developer</div>
+
+          <div class="colophon">
+            <ul class="colophon-links">
+              <li>
+                <a href='index.html'>About</a>
+              </li>
+              <li>
+                <a href='portfolio.html'>Portfolio</a>
+              </li>
+              <li>
+                <a href='BruceRabeResume.pdf' target="_blank">Resume</a>
+              </li>
+              <li>
+                <a href='https://linkedin.com/in/brucerabe' target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href='#' class='contact-link'>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container">
+      <div class='page portfolio'>
+  <h1 class='page-title'>Dashboards</h1>
+  
+  <p>
+    Customized dashboards are ian effective way to display the most important information to the end user,
+    allowing them to act intelligently.  Our design goals for the Unisphere Dashboard framework were to make it very easy to add, remove,
+    and customize widgets, create multiple dashboard views, and provide drill-down capabilities for more information.
+  </p><p>
+    We started off with some Balsamiq wireframes providing different options for the basic functionality:
+        <a href="images/dashboard_framework_wireframe.png"><img src="images/dashboard_framework_wireframe.png" width="100%"></a>
+  </p><p>
+    After implementation of two options, we ran some usability tests and revised the design based on the results:
+  </p>
+      <a href="images/dashboard_screenshot.png"><img src="images/dashboard_screenshot.png" width="100%"></a>
+  <p>
+    When designing the widgets, we used a few guidelines:
+    <ul>
+        <li>What are the most important use cases?</li>
+        <li>What data does a user need at a glance to address those use cases?</li>
+        <li>How to visually present the data?</li>
+        <li>Would the user benefit from more than one presentation of the data?</li>
+        <li>Would the user benefit from showing a subset of the data?</li>
+        <li>Can any non-data ink or non-central data be removed from the widget while presenting the same story?</li>
+    </ul>
+    We generally started with whiteboard drawings:
+  </p>
+  <img src="images/data_protection_widget_whiteboard.png">
+  <p>
+    Then created mockups to illustrate the options:
+  </p>
+  <a href="images/data_protection_widget_balsamiq.png"><img src="images/data_protection_widget_balsamiq.png" width="100%"></a>
+  <p>A user can click on any of the three icon/text panels to get a more detailed breakdown on what objects meet that level of protection:</p>
+  <a href="images/data_protection_widget_unprotected_balsamiq.png"><img src="images/data_protection_widget_unprotected_balsamiq.png" width="100%"></a>
+  <p>Clicking on any of the individual links switches to a master/summary table of LUNs, File Systems, or Datastores, filtered by the protection type (unprotected, locally, or remotely):</p>
+  <a href="images/data_protection_drilldown_filtered_table.png"><img src="images/data_protection_drilldown_filtered_table.png" width="100%"></a>
+
+    <script type='text/javascript' src='js/zepto.min.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+  </body>
+</html>

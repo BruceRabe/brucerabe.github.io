@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Bruce Rabe is a UX/UI designer/developer in the Boston area">
+    <meta name="keywords" content="uxd,javascript,angular,storage">
+    <!--meta property="og:image" content="http://brucerabe.com/public/logo.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <title>
+      
+      Bruce Rabe
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hyde.css">
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <!-- Icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png"-->
+    <!--link rel="shortcut icon" href="/public/favicon.png"-->
+
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>Bruce Rabe</h1>
+        <button class='mobile-toggle'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <div class='toggle-content'>
+          <div class="lead">UX/UI Designer/Developer</div>
+
+          <div class="colophon">
+            <ul class="colophon-links">
+              <li>
+                <a href='index.html'>About</a>
+              </li>
+              <li>
+                <a href='portfolio.html'>Portfolio</a>
+              </li>
+              <li>
+                <a href='BruceRabeResume.pdf' target="_blank">Resume</a>
+              </li>
+              <li>
+                <a href='https://linkedin.com/in/brucerabe' target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href='#' class='contact-link'>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container">
+      <div class='page portfolio'>
+
+  <div class="post">
+    <h2 class='title'>
+      <a href="/2014/12/04/add-json-web-token-authentication-to-your-angular-rails-app/">Authenticating your Angular / Rails App with JSON Web Tokens</a>
+    </h2>
+
+    <span class="post-date">04 Dec 2014</span>
+
+    <h2 id="overview">Overview</h2>
+
+<p>I’m a big proponent of rolling your own authentication solution, especially if you’re only doing simple username/password based logins (as opposed to logging in via an OAuth provider). I’ve tried to use <a href="https://github.com/plataformatec/devise">Devise</a> on a number of Rails apps, but I always end up ripping it out. It’s not because Devise is a bad gem, but because it always takes me more time to customize it to my liking than it does to just write everything myself. And the flexibilitity of a custom solution almost always comes in handy down the road. I have generally implemented it the same way that Ryan Bates does in <a href="http://railscasts.com/episodes/250-authentication-from-scratch-revised">this Railscasts episode</a>.</p>
+
+<p>But now that most of my greenfield projects are single page javascript apps, authentication has become slightly more complicated. While you can certainly continue doing traditional authentication with cookies and server-rendered views, my preference is to use a token-based approach. This has a number of benefits:</p>
+
+<ul>
+  <li>The same authentication API can be used by all types of clients (web app, mobile app, etc).</li>
+  <li>It is stateless, so the web server does not have to keep track of session information, which is good for scaling.</li>
+  <li>Protected against CSRF (cross-site request forgery) attacks</li>
+  <li>All of your views are rendered by the client, rather than a mix of server and client rendered views.</li>
+</ul>
+
+<p>A relatively new standard for accomplishing this is <a href="http://jwt.io/">JSON Web Tokens</a> (abbreviated to JWT). I won’t dig into the details because there are plenty of good resources, but JWT is a way of digitally signing data to be transferred between two parties. The data is represented as an encoded JSON object. In a nutshell, these tokens are passed to the client upon successful authentication and then subsequently used in every HTTP request in order to verify the identity of the client.</p>
+
+
+
+    <a href="/2014/12/04/add-json-web-token-authentication-to-your-angular-rails-app/" class='read-more'>Read More</a>
+  </div>
+  
+  <div class="post">
+    <h2 class='title'>
+      <a href="/2014/09/22/authorization-with-angular-and-ui-router/">Authorization with Angular.js and UI-Router</a>
+    </h2>
+
+    <span class="post-date">22 Sep 2014</span>
+
+    <p>While working on an angular.js application recently, I found myself needing some form of authorization logic (not to be confused with authentication / login). I needed to restrict content in my app based on a user’s role as well as some other factors. At first, I created a single <code>AuthService</code> service that dealt with login, authorization, and session management. But this felt messy and violated the <a href="http://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsibility Principle</a>, so I decided to make something cleaner. My goal was for the API to look something like this:</p>
+
+<p>(Warning: lots of coffeescript ahead!)</p>
+
+<div class="highlight"><pre><code class="language-coffeescript" data-lang="coffeescript"><span class="nx">LoginService</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nf">(u) -&gt;</span>
+  <span class="nx">Session</span><span class="p">.</span><span class="nx">setCurrentUser</span><span class="p">(</span><span class="nx">u</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># ... Elsewhere ....</span>
+<span class="nv">user = </span><span class="nx">Session</span><span class="p">.</span><span class="nx">getCurrentUser</span><span class="p">()</span>
+<span class="nv">authorizer = </span><span class="k">new</span> <span class="nx">Authorizer</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span>
+<span class="nx">authorizer</span><span class="p">.</span><span class="nx">canAccess</span><span class="p">(</span><span class="nx">APP_PERMISSIONS</span><span class="p">.</span><span class="nx">viewAdminSettings</span><span class="p">)</span> <span class="c1"># returns a boolean</span></code></pre></div>
+
+<p>By doing it this way, I was fairly sure I could split my formerly monolithic <code>AuthService</code> into 3 separate services that had no dependencies on one another. I won’t go too detailed into the login and session services because they are fairly straight forward. <code>LoginService</code> has one method that simply makes an HTTP request with a username and password and, if successful, returns the user object. <code>Session</code> is a singleton service that, given a user, can create or destroy the current session. But my solution to Authorization was fairly interesting, so I thought I’d share.</p>
+
+
+
+    <a href="/2014/09/22/authorization-with-angular-and-ui-router/" class='read-more'>Read More</a>
+  </div>
+  
+  <div class="post">
+    <h2 class='title'>
+      <a href="/2014/06/20/building-your-angular-app-with-gulp-js/">Building your Angular app with Gulp.js</a>
+    </h2>
+
+    <span class="post-date">20 Jun 2014</span>
+
+    <p>As my work has transitioned from traditional web apps to thick-client Javascript apps (primarily using Angular), <a href="http://gruntjs.com">Grunt</a> has become essential in my workflow. Grunt is a nice tool and it gets the job done. But there was always something I didn’t like about it that I couldn’t quite articulate until I discovered <a href="http://gulpjs.com">Gulp.js</a>. Whereas in Grunt, you create a json configuration file, Gulp is just a script. It’s code. And it really fits my programmer brain better. In this post, I’ll convert a basic Gruntfile that compiles and minifies Coffeescript into Gulp.</p>
+
+
+
+    <a href="/2014/06/20/building-your-angular-app-with-gulp-js/" class='read-more'>Read More</a>
+  </div>
+  
+  <div class="post">
+    <h2 class='title'>
+      <a href="/2014/01/31/pre-filling-pdf-form-templates-in-ruby-on-rails-with-pdftk/">Pre-Filling PDF Form Templates in Ruby-on-Rails with PDFtk</a>
+    </h2>
+
+    <span class="post-date">31 Jan 2014</span>
+
+    <p>In <a href="/2014/01/14/generate-clean-testable-pdf-reports-in-rails-with-prawn">a recent post</a>, I talked about how to generate PDF reports in Rails using Prawn. This approach is great for generating PDF’s with lots of data tables and other variable-length content. But an alternative situation is when you already have a template authored in an application such as Adobe Acrobat and you want to populate it with data from your database. This makes it more difficult to insert variable-length content, but on the plus side, you no longer need to worry about the layout of the document.</p>
+
+
+
+    <a href="/2014/01/31/pre-filling-pdf-form-templates-in-ruby-on-rails-with-pdftk/" class='read-more'>Read More</a>
+  </div>
+  
+  <div class="post">
+    <h2 class='title'>
+      <a href="/2014/01/22/a-better-onboarding-experience-in-your-angular-js-application/">A Better Onboarding Experience in your Angular.js Application</a>
+    </h2>
+
+    <span class="post-date">22 Jan 2014</span>
+
+    <p>“Onboarding” is one of those things we sometimes forget about when developing an application, but it really deserves more attention. Showing the user how to use your app can be critical in retaining them. Some people might say that if you need onboarding, your app just needs to have a better UX, but I don’t think this is practical in all situations, particularly complex business applications.</p>
+
+<p>For my current Angular app, I wanted a nice way to point out and explain the various features of the application right after signup. I looked through a few javascript plugins such as <a href="http://easelinc.github.io/tourist/">Tourist.js</a>, <a href="http://jeffpickhardt.com/guiders/">Guiders.js</a>, and a few others, but none seemed to work well with angular, so I decided to write my own, which I’m calling <a href="https://github.com/adamalbrecht/ngOnboarding">ngOnboarding</a>.</p>
+
+<p><img src="/public/img/ng_onboarding_screenshot.png" alt="ngOnboarding" /></p>
+
+
+
+    <a href="/2014/01/22/a-better-onboarding-experience-in-your-angular-js-application/" class='read-more'>Read More</a>
+  </div>
+  
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+  
+    <a href="/page2" class="older">Older</a>
+  
+  
+    <span class="previous">Newer</span>
+  
+</div>
+
+    </div>
+
+    <script type='text/javascript' src='js/zepto.min.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+  </body>
+</html>

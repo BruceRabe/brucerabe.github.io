@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Bruce Rabe is a UX/UI designer/developer in the Boston area">
+    <meta name="keywords" content="uxd,javascript,angular,storage">
+    <!--meta property="og:image" content="http://brucerabe.com/public/logo.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <title>
+      Implementation Review &middot;
+      Bruce Rabe
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hyde.css">
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <!-- Icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png"-->
+    <!--link rel="shortcut icon" href="/public/favicon.png"-->
+
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>Bruce Rabe</h1>
+        <button class='mobile-toggle'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <div class='toggle-content'>
+          <div class="lead">UX/UI Designer/Developer</div>
+
+          <div class="colophon">
+            <ul class="colophon-links">
+              <li>
+                <a href='index.html'>About</a>
+              </li>
+              <li>
+                <a href='portfolio.html'>Portfolio</a>
+              </li>
+              <li>
+                <a href='BruceRabeResume.pdf' target="_blank">Resume</a>
+              </li>
+              <li>
+                <a href='https://linkedin.com/in/brucerabe' target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href='#' class='contact-link'>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container">
+      <div class='page portfolio'>
+  <h1 class='page-title'>Implementation Review Case Study</h1>
+  
+  <p>
+    After a GUI developer implements a design, I typically review the implementation.  In this case we went through a few iterations to improve a simple dialog.
+  </p><p>
+    One of my design principles minimalism - less is more.  Basically reducing the design to only the most essential elements.  As Jakob Neilsen says "Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility."
+  </p><p>
+    Design 1 wasn't bad, but the horizontal rulers tend to draw attention away from the important information.
+  </p>
+      <img src="images/Create_Replication_Connection_1.png">
+  <p>
+    Design 2 removed the separators, but everything was pushed up against each other making it hard to separate source from destination.
+  </p>
+  <img src="images/Create_Replication_Connection_2.png">
+  <p>
+    Design 3 added 20 pixels of padding between the two sections - much better.
+  </p>
+  <img src="images/Create_Replication_Connection_3.png">
+  <p>
+    Design 4 removed the colons from the section labels - providing a cleaner look and distinguishing these from normal input field labels.
+  </p>
+  <img src="images/Create_Replication_Connection_4.png">
+  <p>
+    Design 5 added the default padding between controls and increased the font to 12 pixels for the section labels.
+  </p>
+  <img src="images/Create_Replication_Connection_5.png">
+  <p>
+    Design 6 was an alternate exercise putting labels above the input fields and using border and background colors to indicate form validation.  Also the red asterisk was replaced by "(required)".
+  </p>
+  <img src="images/Create_Replication_Connection_6d.png">
+  <p>
+    We decided that the top aligned labels made the form vertically longer and harder to skim the form for required input.  Using the full term (required) just created more clutter.
+  </p><p>
+
+    We also decided to stick with the white background for input fields and highlighting the field in a red border with a tooltip for any validation errors.
+  </p>
+
+    <script type='text/javascript' src='js/zepto.min.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+  </body>
+</html>

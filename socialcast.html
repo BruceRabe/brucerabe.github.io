@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Bruce Rabe is a UX/UI designer/developer in the Boston area">
+    <meta name="keywords" content="uxd,javascript,angular,storage">
+    <!--meta property="og:image" content="http://brucerabe.com/public/logo.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <title>
+      Socialcast &middot;
+      Bruce Rabe
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hyde.css">
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <!-- Icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png"-->
+    <!--link rel="shortcut icon" href="/public/favicon.png"-->
+
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>Bruce Rabe</h1>
+        <button class='mobile-toggle'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <div class='toggle-content'>
+          <div class="lead">UX/UI Designer/Developer</div>
+
+          <div class="colophon">
+            <ul class="colophon-links">
+              <li>
+                <a href='index.html'>About</a>
+              </li>
+              <li>
+                <a href='portfolio.html'>Portfolio</a>
+              </li>
+              <li>
+                <a href='BruceRabeResume.pdf' target="_blank">Resume</a>
+              </li>
+              <li>
+                <a href='https://linkedin.com/in/brucerabe' target="_blank">LinkedIn</a>
+              </li>
+              <li>
+                <a href='#' class='contact-link'>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content container">
+      <div class='page portfolio'>
+  <h1 class='page-title'>Socialcast</h1>
+  
+  <p>
+    Our division used an enterprise social networking platform called <a href="http://socialcast.com/" target="_blank">Socialcast</a>
+    from VMWare.  One of the nice features is a RESTful API to run data analytics on the users, posts, comments, etc.
+    I wrote some python scripts to mine the Socialcast and LDAP account data, merge and transform the data into csv and GDF formats.
+    I used <a href="http://gephi.github.io/" target="_blank">Gephi</a> to visualize who posted and who is commenting.
+    The resulting network shows each user as a circle with their color indicating the number of comments they made and their size indicating the number of other users who commented on their posts.
+    The lines indicate comments. In Gephi, you can hover to see details of who is who.
+  </p><p>
+      <a href="images/socialcast_comments_gephi.png"><img src="images/socialcast_comments_gephi.png" width="60%"></a>
+  </p><p>
+    This is a little different visualization using a circular layout:
+  </p><p>
+    <a href="images/socialcast_comments_gephi_circular.png"><img src="images/socialcast_comments_gephi_circular.png" width="60%"></a>
+  </p><p>
+    I used Excel to create a pivot table and examine what time of day people were active on Socialcast.
+    Since most of the team was based on the East Coast of the US, 8-5 EST (12-9 GMT) showed the most activity:
+  </p><p>
+    <a href="images/socialcast_time_of_day.png"><img src="images/socialcast_time_of_day.png" width="60%"></a>
+  </p><p>
+    We had a few <a href="http://en.wikipedia.org/wiki/Community_of_practice" target="_blank">communities of practice (COP)</a> for worldwide
+    team members to learn from each other.  I analyzed the posts and comments for four of the COPs over 6 months to
+    visualize any trends.  You can see that the GUI COP got steadily more participation while the other COPs were up and down:
+  </p><p>
+    <a href="images/socialcast_posts_by_cop.png"><img src="images/socialcast_posts_by_cop.png" width="60%"></a>
+  </p>
+
+    <script type='text/javascript' src='js/zepto.min.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+  </body>
+</html>
