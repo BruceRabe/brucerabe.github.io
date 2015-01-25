@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Bruce Rabe is a UX/UI designer/developer in the Boston area">
+    <meta name="keywords" content="uxd,javascript,angular,storage">
+    <!--meta property="og:image" content="http://brucerabe.com/public/logo.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+
+    <title>
+        Unisphere Mobile &middot;
+        Bruce Rabe
+    </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/hyde.css">
+    <link rel="stylesheet" href="css/syntax.css">
+    <link rel="stylesheet" href="css/brucerabe.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700|Abril+Fatface">
+    <!-- Icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/touch-icon-144-precomposed.png"-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="masthead">
+    <div class="masthead-inner">
+        <h1>Bruce Rabe</h1>
+        <button class='mobile-toggle'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+        <div class='toggle-content'>
+            <div class="lead">UX/UI Designer/Developer</div>
+
+            <div class="colophon">
+                <ul class="colophon-links">
+                    <li>
+                        <a href='index.html'>About</a>
+                    </li>
+                    <li>
+                        <a href='portfolio.html'>Portfolio</a>
+                    </li>
+                    <li>
+                        <a href='BruceRabeResume.pdf' target="_blank">Resume</a>
+                    </li>
+                    <li>
+                        <a href='https://linkedin.com/in/brucerabe' target="_blank">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href='#' class='contact-link'>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content container">
+    <div class='page portfolio'>
+        <h1 class='page-title'>Unisphere Mobile iPad App</h1>
+
+        <p>
+            Tis project started off as a request from our divisional VP asking what we could with mobile devices.
+            I started off by interviewing our users asking them about their mobile usage and what types of
+            tasks they wanted to accomplish.  Typical use cases:
+            <ul>
+                <li><strong>Ambushed at the morning meeting.</strong> Oracle DBA complaining about performance of his LUNs.  Storage admin wants to show him a report on IOPs and bandwidth over the last day.</dl>
+                <li><strong>On-call without a laptop.</strong>  Out to dinner and want to quickly triage any problems at the data center.</dl>
+                <li><strong>Quickly add more capacity to an application.</strong> Approached in the hall for a simple request for additional 10GB of space.  Don’t want to wait to go back to laptop.</dl>
+            </ul>
+        </p><p>
+            Next step was creating some wireframes using Balsamiq as well as learning iOS and Objective C
+            programming.  We decided to focus on the iPad as the first mobile device based on user research as well
+            as market research on the enterprise mobile workforce.  We also considered a responsive HTML app, but decided
+            on a native app based on several factors.
+        </p><p>
+            The home page for the app is a dashboard showing key information about each system.  It is also the root of
+            the navigation stack, providing easy tap to drill down to each functional area.
+        </p><p>
+            <a href="images/unisphere_mobile_dashboard.jpg"><img class='inline' src="images/unisphere_mobile_dashboard.jpg"></a>
+        </p>
+        <div  class='leftimage'>
+        <a href='images/unisphere_mobile_system_selector.jpg'><img src='images/unisphere_mobile_system_selector.jpg'/></a>
+        </div>
+        <div class='rightdescription'>
+            <p>The Scope Selector is always available at the top right and filters the content to show
+            all systems, a particular system, or a group of systems tagged with the same keyword.
+            </p>
+        </div>
+        <section class="paragraph">
+        <p>
+            Drilling down to Storage System details displays a breakdown of storage usage, serial numbers, versions,
+            contact info, and some key statistics.
+        </p><p>
+            <a href="images/unisphere_mobile_system_details.jpg"><img class='inline' src="images/unisphere_mobile_system_details.jpg"></a>
+        </p>
+        </section>
+            <p>
+            Users can see a hardware view of the system in a couple of different views, as a carousel:
+        </p><p>
+            <a href="images/unisphere_mobile_carousel_view.jpg"><img class='inline' src="images/unisphere_mobile_carousel_view.jpg"></a>
+        </p><p>
+            Or showing the entire rack, with the capability to rearrange enclosures in the rack.  In either case, any
+            hardware faults are highlighted, making it easy to replace parts that fail.
+        </p><p>
+            <a href="images/unisphere_mobile_rack_view.jpg"><img class='inline' src="images/unisphere_mobile_rack_view.jpg"></a>
+        </p><p>
+            Any alerts for the system are displayed with details and links to get more information, order a new part, or
+            email support about the problem.
+        </p><p>
+            <a href="images/unisphere_mobile_alert_details.jpg"><img class='inline' src="images/unisphere_mobile_alert_details.jpg"></a>
+        </p><p>
+            If we have location information for the systems, we can easily plot them on a map:
+        </p><p>
+            <a href="images/unisphere_mobile_map.jpg"><img class='inline' src="images/unisphere_mobile_map.jpg"></a>
+        </p>
+
+
+        <script type='text/javascript' src='js/zepto.min.js'></script>
+        <script type='text/javascript' src='js/app.js'></script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-36101951-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+</body>
+</html>

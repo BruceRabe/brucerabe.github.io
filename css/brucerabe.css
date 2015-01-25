@@ -2,3 +2,19 @@
 img.inline {
     max-width: 100%;
 }
+
+.leftimage {
+    float: left;
+    margin: 0 1.5%;
+    width: 40%;
+}
+
+.rightdescription {
+    float: right;
+    margin: 0 1.5%;
+    width: 50%;
+}
+
+.paragraph {
+    clear: both;
+}
