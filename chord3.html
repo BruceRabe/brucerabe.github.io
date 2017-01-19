@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.chord {
+  fill-opacity: .67;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var outerRadius = 750 / 2,
+    innerRadius = outerRadius - 130;
+
+var allNames = ["Tom","Bruce","Ralph","Brett","Bill","Deb","Karen","Alex"];
+var y = d3.scale.ordinal().domain(allNames);
+y.rangePoints([0,allNames.length-1]);
+
+// colors from colorbrewer R Dark2 pallette
+var colors = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E","#E6AB02", "#A6761D", "#666666"];
+
+//var fill = d3.scale.category10();
+function fill (index) {
+    // lookup names for index
+    var name = names[index];
+    return colors[y(name)];
+}
+
+var chord = d3.layout.chord()
+    .padding(.04)
+    .sortSubgroups(d3.descending)
+    .sortChords(d3.descending);
+
+var arc = d3.svg.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(innerRadius + 20);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", outerRadius * 2)
+    .attr("height", outerRadius * 2)
+  .append("g")
+    .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+    
+// map of number of comments from each commenter to each submitter
+var commentTotals = {};
+var matrix = [];
+var names = [];
+
+//"Date","Commenter","Submitter","Pull ID","Text"
+d3.csv("comments.csv", function(d) {
+  return {
+    date: new Date(d.Date), 
+    commenter: d.Commenter,
+    submitter: d.Submitter,
+    pullid: +d["Pull ID"],
+    text: d.Text
+  };
+}, function(error, rows) {
+  if (error) throw error;
+  rows.forEach(function(row) {
+    addCommentToTotals(row.commenter, row.submitter);
+  });
+
+  // create a matrix and names array
+/*  
+  for (var key in commentTotals) {
+    names.push(key);
+    var c = commentTotals[key];
+    var array = [];
+    for (var key2 in commentTotals) {
+        if (c[key2] == undefined)
+            c[key2] = 0;
+        array.push(c[key2]);
+    }
+    matrix.push(array);
+  }
+*/
+  allNames.forEach(function(name) {
+    names.push(name);
+    var c = commentTotals[name];
+    if (c == undefined)
+        c = {};
+    var array = [];
+    allNames.forEach(function(name2) {
+        if (c[name2] == undefined)
+            c[name2] = 0;
+        array.push(c[name2]);
+    });
+    matrix.push(array);
+  });
+
+  
+  // now add anyone who has not commented - dfemia, arayev
+//  names.push("dfemia");
+  
+
+    function addCommentToTotals(commenter, submitter)
+    {
+        var c = commentTotals[commenter];
+        if (!c)
+        {
+            // looks like this is the first time we see this commenter, create a new map
+            c = {};
+            commentTotals[commenter] = c;
+        }
+        // find the count of how many times commenter -> submitter
+        s = c[submitter];
+        if (!s)
+            // first time commenter->submitter, make it 0
+            s = 0;
+        s = s + 1;
+        c[submitter] = s;
+    }
+
+
+/*
+  // Construct a square matrix counting package imports.
+  imports.forEach(function(d) {
+    var source = indexByName.get(name(d.name)),
+        row = matrix[source];
+    if (!row) {
+     row = matrix[source] = [];
+     for (var i = -1; ++i < n;) row[i] = 0;
+    }
+    d.imports.forEach(function(d) { row[indexByName.get(name(d))]++; });
+  });
+*/  
+/*
+table(comments$Commenter, comments$Submitter)
+             
+              arayev bhays brabe bsopariwala dfemia kravilla rlaporte tpham
+  bhays            0     0     7           8      0        0        6     1
+  brabe           43     2     0          58      8       43       10     7
+  bsopariwala     30     2    68           0      1       10       18    18
+  kravilla         0     0     1           1      0        0        0     0
+  rlaporte         8     4    25          22      2       15        0     2
+  tpham            0     0    51          45      0        0        6     0
+  arayev           2     0     0           0      0        0        0     0
+  */
+
+  chord.matrix(matrix);
+
+  var g = svg.selectAll(".group")
+      .data(chord.groups)
+    .enter().append("g")
+      .attr("class", "group");
+
+  // draw donut segments for each team member    
+  g.append("path")
+      .style("fill", function(d) { 
+        return fill(d.index); 
+        })
+      .style("stroke", function(d) { 
+        return fill(d.index); 
+        })
+      .attr("d", arc)
+      .on("mouseover", fade(.1))
+      .on("mouseout", fade(1));
+
+  // add their names
+  g.append("text")
+      .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+      .attr("dy", ".35em")
+      .attr("transform", function(d) {
+        return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+            + "translate(" + (innerRadius + 26) + ")"
+            + (d.angle > Math.PI ? "rotate(180)" : "");
+      })
+      .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+      .text(function(d) {  
+         return names[d.index];
+      });
+
+  // now draw a path from each commenter to commenteee
+  svg.selectAll(".chord")
+      .data(chord.chords)
+    .enter().append("path")
+      .attr("class", "chord")
+      .style("stroke", function(d) { 
+        return d3.rgb(fill(d.source.index)).darker(); 
+       })
+      .style("fill", function(d) { 
+         return fill(d.source.index);
+      })
+      .attr("pathdesc", function(d) { 
+         return names[d.source.index] + " -> " + names[d.target.index];
+      })
+      .attr("d", d3.svg.chord().radius(innerRadius));
+
+});
+
+// Returns an event handler for fading a given chord group.
+function fade(opacity) {
+  return function(g, i) {
+    svg.selectAll(".chord")
+        .filter(function(d) { 
+        return d.source.index != i && d.target.index != i; 
+        })
+      .transition()
+        .style("opacity", opacity);
+  };
+}
+
+
+d3.select(self.frameElement).style("height", outerRadius * 2 + "px");
+
+</script>
