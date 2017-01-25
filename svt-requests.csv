@@ -1,0 +1,740 @@
+ID,Author,Comments,Merge Date,Hours Outstanding,Changed Files,Commits,Title
+2,Tom,0,2015-07-09T13:52:24.219Z,0.124193333,1,1,Changed rest-api port to 443 and directory of log file
+3,Bruce,3,2015-07-13T11:34:35.763Z,65.26776028,2,3,Added query params for limit and sort of GET backups and backups/details
+4,Bruce,20,2015-07-15T13:43:22.476Z,44.5059275,10,4,Exception handling changes and sorting of Datastores using RESTComparator
+5,Tom,0,2015-07-16T15:23:20.951Z,0.113671111,4,1,Create exec scripts to configure Tomcat
+8,Bruce,0,2015-07-17T18:27:19.913Z,0.027919444,2,1,Moved findByString() from BackupSortKey to BackupControllerV1.
+10,Bruce,5,2015-07-21T20:20:30.337Z,2.927646389,5,3,Added sort/order/limit/offset support to virtual_machines.
+13,Ralph,0,2015-07-24T19:06:54.220Z,0.038547222,1,1,Changed script to take the war file and copy it to SVTBUILD/java
+14,Ralph,1,2015-07-27T01:10:42.016Z,6.532136389,1,2,removed common-management-model from the gradle build because of warnings
+15,Tom,0,2015-07-27T17:12:17.405Z,0.806803611,14,41,Feature/restapi
+16,Tom,0,2015-07-30T20:03:14.396Z,0.617706667,2,4,Update build to configure Tomcat on DVM
+17,Tom,0,2015-07-31T16:54:52.514Z,0.191102222,1,3,Tune Tomcat
+19,Bruce,1,2015-08-04T15:08:57.039Z,24.03110778,1,1,Added sorting/paging to backup_policies.
+18,Tom,5,2015-08-04T16:41:14.392Z,92.92548889,13,5,Sync objects to model
+20,Bruce,5,2015-08-04T20:09:18.444Z,1.343821111,4,3,Global exception handling and policies sort/page support
+21,Tom,1,2015-08-05T17:39:57.279Z,21.60226167,7,5,Support refresh_token
+22,Bruce,2,2015-08-05T17:40:53.343Z,19.31505667,3,4,Refactored DatastoreController and ClusterController to use global exceptions.
+24,Tom,0,2015-08-05T20:38:56.029Z,0.686990833,3,1,Update log level
+23,Bruce,0,2015-08-05T22:37:14.573Z,4.418427222,1,2,Better error handling for null pointer exceptions.
+25,Tom,0,2015-08-06T15:10:17.370Z,0.244794167,11,1,Move exceptions into its own folder
+26,Bruce,2,2015-08-07T11:57:07.370Z,19.60299333,10,3,Refactored controllers to use the ObjectNotFound exception rather than XXXNotFoundExceptions.
+28,Tom,0,2015-08-12T16:54:22.556Z,0.536563056,7,2,Add support for inactive tokens
+29,Bruce,0,2015-08-12T20:51:08.919Z,0.468938056,2,3,Better error handling
+30,Tom,0,2015-08-13T17:27:22.356Z,2.207292778,5,3,Changed storage_cluster(s) to omnistack_cluster(s)
+34,Tom,1,2015-09-03T15:30:04.633Z,1.118754722,51,3,Delete <object>/detail URLs and use RequestMapping at controller level
+36,Brett,27,2015-09-09T20:02:32.502Z,27.51148389,51,5,Refactor Controller by separating business logic.
+37,Tom,1,2015-09-09T20:51:11.406Z,0.546846667,24,1,Fix misspelling - sevice to service
+40,Bruce,1,2015-09-11T12:19:21.131Z,14.1044325,2,1,Return Not Authenticated HTTP response if no token is specified on request.
+44,Brett,13,2015-09-16T17:23:27.523Z,44.9020175,7,11,Mock Builder and Unit Test for TaskService
+49,Ralph,0,2015-09-17T13:40:20.674Z,0.156748889,2,2,reverted a checkin that was breaking the services ability to use HVAL to create a session.  TBD if this change will be permanent (pushed into Himalayas)
+48,Brett,1,2015-09-17T15:36:50.735Z,19.16231472,2,3,Adding unit test for TaskController
+50,Brett,0,2015-09-17T20:11:45.812Z,1.921273611,2,1,Unit Test Code Cleanup
+41,Tom,15,2015-09-18T14:51:24.533Z,167.7388333,11,11,Security unit tests
+51,Brett,2,2015-09-18T17:36:03.620Z,21.13695556,85,4,append package name with com.simplivity
+52,Tom,0,2015-09-21T12:59:05.576Z,10.31276472,2,2,Enable support for FIB deployments
+55,Bruce,2,2015-09-22T19:49:06.016Z,21.87739278,8,2,"Allow override of SVA thrift port (from 9190), specified in rest-api.conf."
+56,Ralph,2,2015-09-25T15:23:47.609Z,43.10451139,7,3,"added more swagger support, and disabled some swagger-ui features that don't apply to the SVT REST solution"
+53,Bill,1,2015-09-25T17:53:22.607Z,101.1185969,18,22,Feature/restapi
+57,Tom,0,2015-09-25T20:32:09.059Z,0.097416667,1,1,Fixed unit test failures caused by new changes to SvtControlClient
+54,Brett,1,2015-09-29T11:36:27.148Z,188.5133478,4,6,Feature/restapi
+59,Bruce,3,2015-09-29T17:36:56.698Z,18.35240028,8,4,Cluster controller and service unit tests.
+58,Bill,0,2015-09-30T17:32:09.942Z,47.71333139,7,6,Thrift Exposure of ControlPlaneTask::getAffectedObjects()
+60,Brett,2,2015-10-01T13:08:23.012Z,39.47631278,8,9,Support to identify failed task and new unit tests for the same.
+62,Bill,0,2015-10-01T22:10:47.587Z,0.071065,1,2,Restored missing call for Task_Results.
+61,Brett,2,2015-10-02T14:11:40.383Z,23.72511861,11,5,Removed redundant code which was introduced by me accidentally.
+65,Tom,0,2015-10-02T17:45:14.231Z,0.368538056,1,1,Add deploy script to src/qa
+63,Bruce,5,2015-10-02T20:12:20.744Z,4.810516667,1,4,Make sure to close files in case of IOExceptions to prevent possible leaks.
+64,Brett,6,2015-10-05T17:08:07.193Z,73.58118889,6,8,Running Task_Complete in case of Task_Results unavailability.
+66,Bruce,4,2015-10-07T16:52:15.909Z,42.82008139,16,5,Unit tests for DatastoreController and DatastoreValidator and DatastoreService.
+68,Tom,4,2015-10-07T17:27:09.707Z,15.58762389,45,7,Fix logging
+70,Bruce,0,2015-10-07T19:14:20.189Z,1.083336389,4,1,Changed field access from private to protected for MOs.
+69,Bill,0,2015-10-08T14:17:47.598Z,25.17187333,24,7,AffectedObjects promoted to 1st class
+72,Bruce,0,2015-10-08T15:12:47.458Z,0.210348056,1,1,Updated Mock builder with TaskResult structure change from Boyd.
+73,Brett,0,2015-10-12T12:48:15.368Z,62.85059167,5,1,Added support to get affected objects by task.
+71,Bruce,1,2015-10-12T15:23:37.174Z,114.3391425,3,1,Unit tests for DatastoreMO and OmniStackClusterMO.
+76,Brett,0,2015-10-13T12:10:20.600Z,18.21819306,12,4,Code cleanup
+75,Bruce,5,2015-10-13T12:11:29.323Z,21.09134778,5,3,Added login.html page which requests a token and saves it as an access_token cookie.  Then it redirects to listObjects.html which is a simple unordered list of different object types.
+77,Bruce,1,2015-10-13T18:56:26.974Z,1.230895,2,1,Fixed a problem with SvtErrors not finding errors.xml.
+78,Bruce,1,2015-10-14T22:14:37.852Z,5.724126667,4,1,Premature token expiration problem.
+79,Bruce,7,2015-10-16T22:32:22.873Z,26.61687556,11,4,Implemened Host objects and unit tests.
+81,Bruce,1,2015-10-19T22:20:07.197Z,6.976154444,7,1,"Added count, limit, and offset fields to JSON response to GET objects."
+82,Bruce,0,2015-10-22T22:06:27.181Z,5.522059722,3,1,Modify policy rule references to use either ID or rule number.
+83,Bruce,1,2015-10-23T11:25:33.723Z,13.01656139,7,1,Fixed a bug where sort field validation was not happening if there was only one object retrieved.
+85,Bruce,1,2015-10-26T12:47:14.971Z,64.73304667,1,1,Add hms field to HostMO to represent the vCenter managing this host.
+86,Bill,1,2015-10-26T19:40:22.510Z,1.857095,25,12,Additional AffectedObjects capture.
+89,Bill,0,2015-10-27T12:41:29.142Z,14.68732194,1,2,Removed unnecessary includes and usings.
+88,Bruce,0,2015-10-27T12:42:36.473Z,14.80814,1,1,Explain how Authorization: Bearer token works in swagger docs.
+87,Bruce,0,2015-10-28T11:14:14.684Z,37.45802917,1,1,Consistent exception for GET omnistack_clusters/{invalidID}.
+84,Bruce,2,2015-10-28T11:14:38.270Z,116.7387036,2,1,Added sort field validation support to GET policies and virtual_machines.
+90,Bruce,0,2015-10-28T17:34:23.516Z,0.786184444,1,1,Faster response for GET /datastores by moving thrift calls out of the for loop.
+93,Ralph,3,2015-10-28T20:26:15.735Z,1.001096944,6,5,Feature/restapi
+94,Bruce,0,2015-10-29T11:42:58.768Z,13.73943306,1,1,Missing cluster information for GET /virtual_machines/id.
+92,Brett,5,2015-10-29T16:49:22.748Z,21.97959194,4,5,Custom affectedobjects at REST level based on thrift affectedobjects.
+96,Ralph,0,2015-10-29T17:25:13.291Z,0.186228889,1,1,HIM-2792: added annotations in order to produce the appropriate documentation for the Task and AffectedObject object types
+98,Brett,1,2015-10-30T19:58:14.415Z,0.695068611,5,4,Unit Test for VirtualMachineController
+97,Bruce,0,2015-10-30T21:59:03.755Z,25.71676667,2,1,Better looking login page and REST API browser page.
+95,Bruce,2,2015-10-30T21:59:52.941Z,31.51911083,5,2,GET /policies/{policyId}/datastores and /policies/{policyId}/virtual_machines.
+99,Bruce,0,2015-11-02T13:12:21.515Z,63.62241083,5,1,Adding more information to GET /tasks/id.
+101,Bruce,0,2015-11-02T15:58:47.990Z,0.582236111,6,1,Add the Try It button back to the swagger docs and add Login button at top right.
+100,Bruce,4,2015-11-02T19:30:14.742Z,20.10272139,12,4,Combine policies and policies/{id}/rules into one controller and one swagger doc section.
+102,Ralph,1,2015-11-02T20:34:58.169Z,0.691471667,8,3,Feature/restapi
+103,Bruce,1,2015-11-03T19:26:25.911Z,21.02935111,8,2,Consolidate PolicyRuleService into PolicyService since there is now just one controller.
+105,Bruce,0,2015-11-03T21:24:38.561Z,1.425242778,2,1,Added convertNodeStateToHostState() to HostMOTest for code coverage.
+104,Brett,1,2015-11-04T12:52:02.474Z,17.50848417,6,5,Unit Test for VirtualMachineController
+107,Ralph,0,2015-11-04T18:42:00.818Z,1.846410833,11,2,"centralized the documentation strings, and started filling out the datastore documentation"
+106,Brett,2,2015-11-04T20:29:44.203Z,4.610910833,12,5,Unit Test for Backup controller
+108,Bruce,0,2015-11-04T20:41:49.903Z,0.550799722,2,2,Added hms and state to sort fields.
+109,Brett,3,2015-11-05T14:39:25.258Z,16.65885806,7,3,Added unit test for MO class
+111,Bruce,1,2015-11-09T20:10:17.713Z,92.92256722,2,2,"Added VirtualMachineState enum and state field with values of DELETED, REMOVED, ALIVE."
+113,Ralph,2,2015-11-10T13:12:21.995Z,16.49887139,3,2,"HIM-4007:  added documentation for Host objects.  Also changed the ""hms"" property of the HostMO type to be ""hypervisor_management_system"" so that it is more explicit."
+115,Tom,1,2015-11-11T12:09:27.663Z,14.28405333,1,2,Changed directory permissions for /var/log/tomcat7
+116,Bruce,0,2015-11-11T12:10:09.692Z,13.76921722,1,1,Cannot easily sort on omnistack_cluster_name since this is currently calculated by the datastore->datacenter relationships.
+117,Bruce,1,2015-11-11T19:28:14.165Z,3.226538333,1,1,Hive_Get() returns error 97 if VM is deleted or removed.
+118,Ralph,1,2015-11-12T12:50:38.147Z,15.590825,5,3,added in support to run the service on a DVM and have the test credentials used to talk to the local svtfs session
+120,Bruce,1,2015-11-12T16:20:23.994Z,1.043002778,2,1,Fixed VirtualMachineServiceTest.
+119,Brett,7,2015-11-12T17:36:15.599Z,14.80099056,3,6,Adding support for specific field request for Datastore object.
+114,Bruce,3,2015-11-12T20:07:17.073Z,47.64380417,5,2,Backup query support.
+121,Ralph,0,2015-11-12T21:14:20.351Z,1.381171667,1,4,"reset the boolean to false if the ""test mode"" criteria isn't met"
+122,Brett,1,2015-11-13T12:32:55.850Z,15.864695,4,4,Added Unit Test for Datastore Field parameter.
+123,Bruce,0,2015-11-13T12:33:55.551Z,12.37168556,5,1,Removed GET /virtual_machine/{vmid}/backups/{backupID} since it is redundant with GET /backups/{backupId}
+125,Brett,1,2015-11-13T19:04:09.575Z,4.303873056,6,4,Added support for Field parameter to Host
+127,Brett,1,2015-11-16T13:12:44.178Z,64.29885139,3,2,Added support for field paramter to Virtual Machine
+124,Bill,1,2015-11-16T15:53:51.498Z,83.98740528,18,4,Completed the existing limit/offset support for backups.
+126,Ralph,0,2015-11-16T16:13:19.002Z,69.09686333,8,3,Feature/restapi
+128,Brett,3,2015-11-17T12:09:58.838Z,18.31417917,3,6,Adding offset support to backup service
+129,Bruce,0,2015-11-17T12:10:36.248Z,12.95401722,3,1,Replaced field name hms with hypervisor_management_system.
+130,Brett,0,2015-11-17T16:38:46.515Z,1.3965325,5,2,Added field support to Omnistack Cluster object.
+131,Bruce,7,2015-11-18T19:13:02.032Z,21.522215,3,5,Added BackupStateMO which mirrors thrift BackupState and refactored BackupService.
+133,Bruce,0,2015-11-19T12:20:26.821Z,12.31482417,1,2,Removed the org.assertj.core.util.Collections.isNullOrEmpty() since this is causing gradle build problems.
+134,Ralph,2,2015-11-19T18:40:03.598Z,4.541397778,10,4,HIM-5134: renamed security tests to adhere to the ***Test.java naming convention.  Fixed a race condition in the SessionTickler test where the tickle sessions were not started before we tried to verify them.
+136,Bruce,0,2015-11-23T16:01:07.602Z,69.33271306,2,2,HTML cleanup removing Chrome browser errors.
+135,Ralph,1,2015-11-23T16:12:14.877Z,70.52976444,1,1,tightened the logic around determining whether we are in test mode or not to handle any exceptions in a determinate manner
+137,Brett,0,2015-11-23T21:20:26.045Z,25.10798444,10,7,BackupService Unit Test
+138,Bruce,0,2015-11-23T21:22:51.606Z,0.111590833,9,1,Coverity bug fixes.
+139,Ralph,0,2015-11-30T12:18:03.010Z,61.74366611,1,2,Feature/restapi
+140,Brett,0,2015-11-30T18:24:48.242Z,10.96802833,1,3, Unit test for BackupMO
+141,Brett,1,2015-12-01T16:13:13.411Z,19.53198167,3,3,Removing unused methods.
+144,Bruce,0,2015-12-02T21:20:06.545Z,0.200407778,1,1,HIM-2234: Wrong sort key passed into Thrift for size sort on backups.
+142,Ralph,0,2015-12-03T12:23:26.682Z,16.45332944,1,2,Had to keep the password locally since the User object will flush the password value once authentication has taken place.
+145,Bruce,1,2015-12-03T18:43:25.486Z,0.028781944,2,1,"HIM-2234: Return NA for expiration_time field if backups do not expire, matching the CLI behavior."
+146,Brett,0,2015-12-07T21:52:30.655Z,0.885235,9,17,Controller fix for clover run
+147,Bruce,1,2015-12-08T15:53:14.948Z,17.47405556,2,1,HIM-2234: Check for NA on min or max expiration time query for backups.
+149,Bruce,0,2015-12-09T23:51:27.176Z,4.498533611,4,1,HIM-2234: Rename backup params expiration_time_min/max to expires_after/before and created_at_min/max to created_after/before.
+148,Ralph,3,2015-12-10T16:26:21.087Z,25.521115,6,7,Feature/restapi
+150,Bruce,0,2015-12-11T13:18:19.278Z,14.73852389,2,1,Comment out the PUT /datastores/id/action until we implement it.
+151,Ralph,0,2015-12-11T19:10:03.873Z,1.500696111,4,4,Feature/restapi
+152,Bruce,0,2015-12-11T21:33:55.137Z,0.236417778,1,1,HIM-2234: Should be case insensitive sort query param.  Convert to lower case.
+153,Deb,1,2015-12-14T13:15:46.570Z,62.8250475,1,2,Edited REST API documentation constants
+154,Bruce,1,2015-12-16T20:58:43.814Z,0.844918333,1,1,HIM-2235: Convert thrift object type to REST object type for affected objects.
+155,Brett,0,2015-12-16T21:46:06.575Z,0.029320278,1,1,Removing higher level folder from git ignore which are blocking others to create any file under git on Himalaya.1
+156,Bruce,0,2015-12-17T18:57:54.806Z,0.303578056,5,1,Replaced a couple of the simpliVity graphics with better looking ones.
+157,Bruce,0,2015-12-17T19:49:45.313Z,0.885422778,1,1,AffecteObjectsMO change objType and objId to object_type and object_id.
+159,Bruce,0,2015-12-21T17:41:11.919Z,44.73775833,1,1,HIM-2236: POST /api/virtual_machines/{id}/action should check id and return 404 if not found.
+160,Brett,0,2015-12-22T17:48:43.813Z,0.966249444,2,2,"Adding support for spring actuator, production ready endpoints."
+161,Brett,1,2015-12-23T21:22:53.064Z,0.955100278,11,2,Feature/restapi
+163,Brett,0,2015-12-30T13:29:38.209Z,19.65818222,5,2,Unit Test for PolicyService class
+164,Deb,4,2015-12-30T20:57:04.173Z,4.671852778,1,3,Edited Documentation constants strings
+165,Brett,0,2015-12-31T15:45:17.874Z,20.13551417,10,1,Adding support to allow only application/vnd.simplivity.v1+json MIME type for JSON body to POST/PUT request.
+166,Bruce,0,2015-12-31T16:32:35.776Z,0.213000278,1,1,HIM-2235: Fixed a build error with SvtDocumentationConstants that uses this class - SvtPropertyConstants.
+162,Brett,10,2016-01-02T19:03:32.160Z,123.0722814,14,6,Backup POST support to new doc format
+167,Bruce,1,2016-01-04T13:04:39.459Z,87.89944278,10,3,HIM-5849: Check for Content-Length with body and make sure it is present and less than 3000 bytes.
+168,Ralph,2,2016-01-07T18:35:28.214Z,46.28709472,3,2,fixed some negative testing issues
+170,Bruce,6,2016-01-11T22:10:42.537Z,98.53198972,23,6,HIM-2246: Refactor VM POST operations to use new format - move/clone/backup/set_policy.
+171,Bruce,1,2016-01-12T15:20:05.240Z,16.65684306,7,1,Adding unit test for code coverage.
+172,Deb,0,2016-01-12T21:40:31.248Z,1.422436389,1,1,Editing documentation constants strings
+173,Bruce,0,2016-01-13T15:29:16.512Z,16.7437725,1,2,"HIM-2246: virtual_machine/backup with empty backup_name is OK, just creates a default name."
+175,Bruce,0,2016-01-13T20:56:20.353Z,1.261799444,1,1,HIM-2246: Give a better JSON error back to the client if they supply an unknown key in the JSON body for a POST/PUT action.
+174,Ralph,0,2016-01-14T12:18:54.902Z,20.83690083,2,2,Added support to write out user doc (in json and xml forms) both when unit tests are run and when the service starts
+176,Bruce,0,2016-01-14T12:19:43.617Z,14.93397361,1,1,HIM-2246: Added unit tests for invalid keys in JSON body for POST actions.
+177,Brett,3,2016-01-18T13:06:31.021Z,65.42433611,1,4,Adding help option for max-results for svt-backup-show.
+179,Bruce,0,2016-01-19T15:27:29.297Z,15.67913833,6,1,Coverity fixes for non-serializable static comparator classes and for missing hashCode().
+178,Bruce,1,2016-01-19T17:44:14.647Z,18.69405278,24,1,HIM-6528: Rename Backup and cleanup of action MOs.
+180,Bruce,1,2016-01-20T15:43:28.762Z,16.18766778,6,2,HIM-7474: Fixed big where GET /backups?type=MANUAL is ignored.
+181,Ralph,2,2016-01-20T17:36:34.149Z,4.241375556,3,3,"changed swagger-UI default outputs for boolean values to false.  Changed what is shown in the swagger UI for string properties to now be ""<string value>"".  Added a default description to the app_consistent value description when backing up a VM."
+182,Deb,0,2016-01-20T19:44:08.648Z,2.644003889,1,1,Edited doc comments for renaming a backup
+184,Bruce,0,2016-01-20T21:54:34.623Z,0.550123333,1,1,Allow an empty vitual_machine_name string when restoring a backup to a new VM.
+183,Bill,4,2016-01-25T16:23:57.710Z,118.8845886,25,82,"Hive_Query - a hive-centric analog to Backup_List3, i.e., it's got a query-spec."
+185,Ralph,0,2016-01-25T16:24:30.133Z,1.135366389,1,1,HIM-7342: changed logic to determine if the sessions have been tickled from using conditional AND to conditional OR.
+187,Brett,0,2016-01-25T19:24:37.387Z,0.666548056,2,1,Fixing support for sent_size and size range parameter for backup service.
+189,Brett,1,2016-01-26T00:13:49.584Z,0.111633889,1,3,test_control_svtcontrolhandler unit test fix
+190,Bruce,0,2016-01-27T21:00:26.439Z,28.53264278,1,1,HIM-2244: Allow a blank virtual_machine_name for clone action.  In that case a default VM name will be assigned.
+192,Brett,1,2016-01-29T19:56:46.933Z,3.619696389,3,2,"Adding hms_id, datacenter_id and name to hive_query"
+191,Ralph,0,2016-01-29T19:57:02.685Z,5.120089167,2,2,added additional params to hive constructor to account for new content
+193,Bruce,1,2016-02-01T16:04:24.696Z,13.61639444,6,1,HIM-2336: Adding swagger docs to policies operations.
+195,Brett,7,2016-02-03T00:45:15.998Z,21.74800111,9,3,"For Himalaya Release, use Hive_Query in place of Hive_List and Hive_Get"
+196,Bruce,0,2016-02-03T16:02:33.082Z,19.11643944,9,1,HIM-2336: Fixed problem when requesting GET policies?fields=rules.
+198,Brett,1,2016-02-03T19:41:07.253Z,3.7135,1,3,Server side changes to add vmhive id into query and get hiveid instead of tree id.
+200,Brett,0,2016-02-03T20:42:03.901Z,0.645418611,13,2,Code cleanup.
+199,Ralph,0,2016-02-04T14:13:25.287Z,18.54762139,3,3,changed logic so that a VM MOVE request treats a passed in VM name as optional.
+202,Ralph,0,2016-02-04T19:58:37.038Z,0.905917222,2,1,fixed exception issues in the tests.
+201,Brett,1,2016-02-05T12:58:07.177Z,39.45607722,9,4,Matching sort key with REST sort keys for vm
+203,Bruce,0,2016-02-05T16:23:43.394Z,1.388286111,1,1,"HIM-6788: Return the correct total count of virtual machines, regardless of the number of objects returned."
+204,Bruce,8,2016-02-08T18:16:56.295Z,18.33755611,14,2,"HIM-2336: Aligned policy rule destination, cluster-id, and cluster-name."
+205,Brett,1,2016-02-08T18:17:26.261Z,15.198875,1,2,changes to consider tree_id as primary object id for vmhive.
+206,Brett,1,2016-02-09T19:56:36.992Z,3.408931667,6,2,Removed id parameter from get vmdetails.
+207,Brett,0,2016-02-09T20:33:42.898Z,0.412693056,2,1,Adding Tree_Id as sort key for Hives
+208,Brett,0,2016-02-09T21:15:36.582Z,0.221443889,1,1,Setting tree_id for sorting inplace of vm_id as we are treating tree_id as vm_id
+209,Bruce,0,2016-02-10T00:14:38.436Z,2.095316944,9,1,HIM-2336: Removed the max_backups body param when creating a backup policy rule to match the CLI.
+210,Brett,0,2016-02-10T00:16:10.512Z,0.151664167,3,2,Added filtering at SQL level for invisible vms to client.
+211,Bruce,0,2016-02-10T18:46:20.267Z,0.645388611,1,1,"Fixed a bug where GET backups?expires_after query on expiration date ended up querying on creation date instead,"
+212,Brett,0,2016-02-10T20:42:53.049Z,2.135439444,6,3,Fixed showExpensiveField flag.
+215,Bruce,0,2016-02-11T17:26:12.182Z,0.146774167,1,1,HIM-6788: GET /virtual_machine/{vmid} should return ha_status field
+213,Bruce,1,2016-02-11T21:28:52.731Z,24.02259361,8,3,rest-automation initial pull request
+214,Karen,2,2016-02-11T21:29:26.054Z,22.65319361,12,4,Ravilla/HIM-8376
+216,Bruce,0,2016-02-12T16:17:56.526Z,15.322735,10,1,HIM-2336: Fixed GET /policies/{policyid}/rules/{ruleid}
+219,Deb,0,2016-02-16T12:05:37.160Z,34.94953111,1,1,Editing Documentation constants
+220,Deb,1,2016-02-17T15:35:31.964Z,22.24270472,1,2,A few more tiny edits to Doc. constants
+221,Bruce,1,2016-02-17T15:55:19.105Z,17.32303333,19,3,Bruce/more automation tests
+222,Karen,0,2016-02-17T16:01:23.880Z,16.92020583,10,2,Ravilla/HIM-8377
+224,Bruce,1,2016-02-17T21:13:52.512Z,0.919933333,9,2,HIM-8119: Remove default login credentials from login.html and host all css/js/fonts locally.
+227,Bill,0,2016-02-17T22:51:18.865Z,0.6471425,2,4,Restored Hive_List's original code paths.
+226,Bruce,0,2016-02-18T12:13:27.281Z,14.11631583,9,1,HIM-5848: Add HEAD method to all controllers to mirror GET methods.
+228,Bruce,0,2016-02-19T09:56:16.061Z,21.59683028,12,1,HIM-2336: Replaced PolicyValidator with PolicyMO.validate().
+230,Karen,0,2016-02-19T09:58:15.291Z,14.10083028,1,1,HIM-8376 Usability: Return X-Total-Count header for collections
+229,Karen,1,2016-02-20T13:43:17.324Z,43.61628972,1,3,HIM-8377 Usability: Add Location header pointing to newly created task objects
+234,Brett,0,2016-02-22T19:01:58.170Z,56.73389333,2,2,Fix for not returning deleted vms by Hive_Query
+235,Bruce,0,2016-02-22T19:26:50.598Z,51.30820222,3,1,HIM-6495: Clean up docs for rename backup and set VM policy.
+233,Karen,4,2016-02-22T19:27:54.211Z,70.42071528,6,4,HIM-8447 Add optional retention time field to virtual_machine backup and use destination_id rather than datastore_id
+236,Bruce,0,2016-02-22T19:28:18.755Z,50.40368222,1,1,HIM-2336: getObjectsSortOnHiddenNameField
+237,Karen,0,2016-02-22T21:22:17.817Z,0.356676389,1,1,HIM-8447 : Add optional retention time field to virtual_machine backup and use destination_id rather than datastore_id
+238,Brett,1,2016-02-22T22:27:53.151Z,0.789195833,1,2,Fix for virtual_machines not sorting correctly by name
+232,Alex,43,2016-02-23T14:38:19.627Z,90.61723056,34,14,Feature/restapi
+241,Ralph,0,2016-02-23T21:42:39.699Z,1.978849167,5,1,Changes needed to fix the junit tests
+243,Alex,0,2016-02-24T12:15:12.008Z,15.74615278,2,3,HIM-8159 fixed
+242,Bruce,1,2016-02-24T16:15:47.394Z,20.35419583,17,5,Bruce/removed size field
+239,Bruce,3,2016-02-24T16:20:59.065Z,42.38920694,10,3,HIM-2242: POST /api/datastore to create a datastore and DELETE datastore
+240,Brett,1,2016-02-24T16:24:25.802Z,20.89445833,21,4,"Affected objects for datastore create, policy and policy rule create and policy rule edit"
+244,Karen,0,2016-02-24T16:25:59.491Z,1.676353611,1,1,HIM-9029 Update swagger docs to show the default for retention_time
+245,Ralph,1,2016-02-24T17:56:38.477Z,0.093495833,3,2,Mods to allow unit tests to run
+246,Alex,1,2016-02-24T21:09:43.806Z,1.259999722,2,3,Metric tests added
+247,Bruce,0,2016-02-25T04:14:03.262Z,7.195205833,4,1,HIM-2336: Removed rule_size from automated policies test.
+248,Ralph,0,2016-02-25T04:18:54.993Z,6.985966389,1,2,addressed some coverity issues
+249,Bruce,0,2016-02-25T04:20:32.927Z,5.089033333,1,1,HIM-2336: Check for id and rules when creating a policy and reject them.
+251,Bruce,0,2016-02-25T15:25:40.327Z,0.177773611,1,1,HIM-2336: Fixed unit test to match expected input for PolicyControllerTest.testCreatePolicy()
+250,Ralph,1,2016-02-25T15:53:41.957Z,2.013973056,9,13,Refresh from core RESTAPI development to ToHimalayas branch
+252,Karen,0,2016-02-25T17:35:47.766Z,2.325100556,4,3,Ravilla/HIM-8954  Java unit test code coverage.
+255,Ralph,0,2016-02-25T19:09:17.023Z,0.119056944,1,1,fixed merge issue that broke the restapi build
+256,Alex,1,2016-02-25T21:28:53.868Z,1.7577725,5,2,"More unut tests, unreachibale code removed, mutiple objects in mixed fields replay Host and Cluster fixed"
+259,Ralph,0,2016-02-26T00:02:46.436Z,0.004632778,2,1,turned off tests that are failing on jenkins
+257,Brett,0,2016-02-26T00:03:10.693Z,3.3646875,2,3,including deleted vms to rest response
+258,Bruce,0,2016-02-26T00:03:30.333Z,1.527099167,3,1,HIM-2336: Allow empty rules when creating a policy.
+260,Ralph,0,2016-02-26T12:08:37.659Z,0.002878333,12,12,Feature/restapi
+261,Alex,1,2016-02-26T19:20:39.526Z,1.110855278,2,3,SvaClient unit tests added
+262,Ralph,0,2016-02-26T19:24:16.045Z,0.080226389,3,1,HIM-2238: configure connection and request limits for REST interface
+263,Brett,0,2016-02-27T13:54:07.835Z,16.95183528,4,5,Displaying platformName as vmName
+264,Bruce,0,2016-02-27T13:56:32.874Z,16.57400222,5,1,HIM-2336: more automation tests.
+266,Bruce,0,2016-02-28T12:48:07.666Z,12.1466975,9,2,HIM-9175: Remove VM sorting by state and fixed unit and integration tests
+265,Karen,2,2016-02-29T12:11:51.460Z,62.35014694,3,7,Ravilla/HIM-8954
+267,Bruce,0,2016-02-29T12:13:07.819Z,9.963298889,6,3,HIM-2336: Affected objects test for policies
+268,Karen,0,2016-02-29T14:34:18.358Z,0.127590833,1,1,HIM-9145 Removed the Junit test which is failing on jenkins build
+269,Alex,0,2016-02-29T20:44:49.249Z,0.480241944,9,2,Unit tests added. Unreachable exception removed.
+271,Bruce,0,2016-03-01T12:11:53.905Z,14.56088694,2,1,HIM-2336: Size can be either Integer or Long depending on how big.
+273,Bruce,0,2016-03-01T16:01:34.220Z,0.789275278,1,1,HIM-2238: Increase the number of requests per second to speed up loading of index.html.
+274,Bruce,0,2016-03-01T20:20:57.061Z,4.206780833,5,1,HIM-2336: Make sure VM is alive before performing operations on it.
+277,Ralph,0,2016-03-02T00:25:33.738Z,4.084772778,1,2,HIM-9201: do a null check before attempting to use the ControlPlaneTask instance
+278,Karen,1,2016-03-02T00:30:14.153Z,3.9192775,2,1,HIM-8954
+275,Bruce,0,2016-03-02T00:31:23.915Z,7.300475278,2,3,HIM-8303: Change permissions of /var/log/nginx and /var/svtfs/www/services/rest to 744 so svtcli user can read them.
+280,Bruce,0,2016-03-02T00:36:14.967Z,1.430368611,1,1,HIM-9079: Make Enter/Return key work for swagger login page
+276,Bruce,1,2016-03-02T00:37:58.836Z,5.056750556,1,1,HIM-2336: No default for policy rule retention
+281,Ralph,0,2016-03-02T14:13:30.007Z,0.826854722,2,1,"Removed metric controller from the swagger list, and fixed the ""order"" descriptor when enumerating virtual machines"
+283,Deb,0,2016-03-02T17:46:44.871Z,0.605425278,1,4,Feature/restapi
+284,Ralph,0,2016-03-02T17:54:10.374Z,0.01474,3,8,Feature/restapi
+285,Bruce,0,2016-03-02T18:24:09.277Z,0.128523611,1,2,svt-rest-api.log permission settings
+286,Ralph,0,2016-03-02T18:25:44.098Z,0.004919444,1,4,Feature/restapi
+287,Bruce,0,2016-03-02T19:54:25.685Z,0.725305,2,1,HIM-8303: Backing out the changes to restapi logging.
+288,Ralph,0,2016-03-02T19:57:23.294Z,0.004278889,2,3,HIM-8303: Backing out the changes to restapi logging.
+290,Bruce,0,2016-03-04T12:40:48.995Z,14.73872111,5,1,HIM-9336: Restore Backup throwing error 27
+292,Ralph,0,2016-03-04T16:27:14.612Z,2.299842778,1,2,HIM-9361: shortened the description for POST /backups/{bkupId}/restore so that it will fit on the same line at 100% zoom
+291,Bruce,0,2016-03-04T16:55:55.845Z,17.39660694,6,1,HIM-2336: More automated tests
+293,Ralph,0,2016-03-04T18:57:13.431Z,1.356165833,6,2,Feature/restToHimalayas
+294,Bill,1,2016-03-07T14:44:16.517Z,11.96771583,7,11,Fix for getAffectedObjects and some additional Java-side tests for REST.
+295,Ralph,0,2016-03-07T15:03:24.559Z,0.005030278,6,2,"Revert ""HIM-2336: More automated tests"""
+296,Bruce,3,2016-03-08T15:46:25.035Z,16.76913639,17,3,HIM-9381: Wrapping all thrift calls to log them in SvtControlClient.
+297,Brett,1,2016-03-08T22:21:23.253Z,2.584956111,8,2,Added java doc as per Simplivity coding standards.
+298,Karen,1,2016-03-08T22:50:27.413Z,0.899010278,20,3,HIM-9447 - fixed model information in swagger-ui for POST operations of datastore and policy
+299,Bruce,0,2016-03-09T12:04:31.516Z,12.28225944,6,1,HIM-2336: Adding more tests around case insensitive sorting for Datastores and Policies.
+300,Bruce,0,2016-03-10T18:42:09.979Z,21.44730889,3,1,HIM-2336: Added test to check cluster members match ALIVE hosts.
+303,Bruce,0,2016-03-11T13:33:37.527Z,11.43701667,4,1,HIM-2336: Fixes to coverity found problems.
+302,Bruce,0,2016-03-11T15:25:09.525Z,20.36312111,3,4,HIM-2336: Move VM tests changed to create a powered off VM by restoring from backup.
+301,Karen,5,2016-03-11T18:43:28.534Z,44.61856528,1,2,"HIM-9531 Swagger typos, spelling mistakes"
+305,Ralph,0,2016-03-14T11:05:52.269Z,62.12884472,1,2,Pull Boyd's affected_objects fix for RemoteTasks into feature/restapi
+306,Brett,0,2016-03-14T11:06:29.535Z,58.90848944,1,2,Removed vm-state from dsv-vm-query
+304,Alex,4,2016-03-14T11:08:34.967Z,63.21019472,4,3,dsv command usage added. hosts tests extended to metrics
+307,Brett,0,2016-03-15T15:40:04.866Z,17.05266417,16,2,Added unit test for MetricController and MetricService
+308,Bruce,1,2016-03-15T18:17:18.048Z,19.31336556,10,2,HIM-2616: Resize datastore
+310,Alex,5,2016-03-16T15:14:21.507Z,18.64425167,6,8,Cluster tests added.
+312,Alex,0,2016-03-16T16:02:39.642Z,0.548110278,1,2,Change back to original and correct code
+313,Bruce,0,2016-03-17T19:04:17.147Z,27.19840333,3,2,HIM-2336: Fixed maven repo and println statement in rest-automation.
+314,Ralph,0,2016-03-18T14:56:46.634Z,2.445225556,15,2,HIM-9529: refactored the code so that the gradle build would create a runnable jar file.  Added task to build.gradle (megaJar) that will bundle all dependencies into the jar file
+315,Bruce,0,2016-03-18T14:57:26.704Z,1.505798889,1,1,HIM-9531: removed the term node from host description.
+317,Ralph,0,2016-03-21T18:32:04.668Z,0.074978889,1,1,"HIM-9919: added export that will keep glibc from creating a large amount of 64mb sized arenas, that bloat resident memory"
+316,Alex,0,2016-03-23T11:09:38.143Z,61.61337472,3,1,code coverage added for new functions.
+318,Karen,4,2016-03-23T11:10:25.648Z,39.12549111,3,7,HIM-9529 Run automation from CLI
+320,Alex,1,2016-03-23T18:12:19.564Z,0.726110556,5,2,SvtClientControl changes
+319,Bruce,1,2016-03-23T18:21:13.160Z,19.70434333,5,3,HIM-9962: Check SVA feature level and version to make sure it can run post HIM1 tests without failing.  
+322,Brett,0,2016-03-25T18:02:11.183Z,21.10833028,10,1,Adding support for policy rename
+321,Bruce,0,2016-03-25T18:37:59.328Z,46.04408194,2,4,HIM-8931: Create root index.html with a pointer to swagger docs.
+324,Brett,2,2016-03-25T21:46:05.705Z,2.936781944,2,2,Java Integration Test for Policy Rename
+323,Karen,3,2016-03-28T11:39:41.447Z,86.09756,3,2,HIM-9529: Configuring multiple loggers in java integration tests
+325,Brett,0,2016-03-28T11:40:51.027Z,61.82011139,3,1,Adding affected objecst to policy_rename and datastore_resize tasks.
+326,Ralph,0,2016-03-28T12:38:39.095Z,0.003703333,1,1,"HIM-9919: added export that will keep glibc from creating a large amount of 64mb sized arenas, that bloat resident memory"
+327,Brett,2,2016-03-28T20:03:46.126Z,5.722341389,1,4,Added integration test for affected objects returned by policy rename.
+330,Brett,0,2016-03-29T13:25:05.263Z,16.02533139,11,2,Adding new unit test for better code coverage
+331,Karen,0,2016-03-29T13:26:23.315Z,15.58792444,2,2,HIM-8954: Code coverage in svtExceptions area
+328,Alex,2,2016-03-29T17:16:51.847Z,23.82943278,6,2,RestApiSereviceTest added
+332,Bruce,6,2016-03-29T20:07:50.897Z,21.62811611,16,4,HIM-8955: Support vCenter linked mode
+333,Brett,0,2016-03-29T20:09:12.786Z,0.950835556,3,1,Changed Policy Rename operation from PUT to POST.
+334,Ralph,1,2016-03-30T13:01:41.011Z,15.94351806,1,1,"Removed metric controller from the swagger list, and fixed the ""order"" descriptor when enumerating virtual machines"
+335,Ralph,0,2016-03-30T13:02:13.050Z,0.091472778,1,1,turned off tests in RestApiServiceTest that are currently failing on jenkins
+336,Karen,0,2016-03-31T16:02:19.229Z,0.833229722,1,1,HIM-9529: Changed date format in log4j2.xml to make it consistent with ATF logs
+337,Bruce,2,2016-04-04T11:09:56.109Z,86.26609028,3,3,Log Java version for restapi and rest-automation.
+339,Brett,1,2016-04-04T11:28:25.409Z,31.73511111,5,2,Added new api for rest api and svtfs version
+340,Ralph,0,2016-04-04T18:55:03.064Z,1.954608611,1,1,Changed logic to make sure that a request for a random policy that needs a rule find one if one is defined.  Also changed the renamePolicyTest to generate a name that should be unique across multiple runs.
+341,Brett,0,2016-04-05T19:25:55.575Z,5.026085833,1,2,Fixing bug.
+342,Brett,1,2016-04-06T14:53:20.052Z,18.24712639,12,3,Added integration test for RestApiVesion.
+343,Bruce,4,2016-04-06T21:49:21.621Z,3.030299444,7,2,HIM-8955: Integration testing in vCenter linked mode.
+344,Alex,3,2016-04-07T11:09:03.227Z,15.47900361,10,5,Feature/restapi
+345,Brett,0,2016-04-07T13:22:56.555Z,15.56057,2,2,Changed the REST API Svtfs Version formant.
+346,Karen,14,2016-04-07T21:57:27.922Z,6.658631667,10,4,HIM-10225: Allow OAUTH login from Web client using existing vCenter session map
+348,Karen,0,2016-04-08T14:10:53.301Z,0.465001389,1,1,HIM-10225
+349,Bruce,0,2016-04-08T14:22:33.310Z,0.232442222,2,1,HIM-8955: Skip any vCenters in linked mode that we cannot create a session using the username/password provided.
+347,Alex,5,2016-04-11T11:24:23.648Z,86.8627325,19,6,Metrics perfomance moved to related controllers
+351,Brett,1,2016-04-11T11:27:43.042Z,12.06813694,1,3,Affected objects for backup_copy task
+350,Karen,3,2016-04-11T13:50:36.886Z,64.70124667,6,4,HIM-10225:Allow OAUTH login from Web client using existing vCenter session map
+352,Brett,0,2016-04-11T23:13:02.053Z,9.172894722,1,2,Bug fix: virtual_machines with / show up as %2f - problem with Hive_Query() not decoding platformName
+353,Bruce,0,2016-04-12T04:24:47.305Z,6.778287778,1,1,HIM-8955: unit tests for new linked mode functionality.
+354,Ralph,1,2016-04-12T14:19:14.711Z,1.617409444,1,2,"Added logic to avoid trying to rename the Default policy, as that will always error"
+355,Bruce,0,2016-04-12T15:14:50.421Z,0.840768056,3,1,HIM-10270: Remove Z from start/endTime for backup policy rules.
+357,Brett,0,2016-04-12T15:40:39.350Z,0.584285278,2,2,Fix for unit test test_control_unit_replicatebackupwrapper
+358,Bruce,0,2016-04-12T15:54:03.315Z,0.387143611,1,1,HIM-10270: Removed Z from the unit tests.
+359,Alex,1,2016-04-12T20:07:52.928Z,1.075863333,4,2,Invalid argument exception added for time offset errors
+356,Karen,4,2016-04-13T14:54:44.907Z,24.0581225,12,9,HIM-10225: Added integration tests of session grant
+360,Brett,3,2016-04-13T16:43:35.292Z,19.42804722,11,3,REST Support for backup_copy
+361,Ralph,1,2016-04-13T16:44:17.387Z,3.456867778,1,1,Modified tests to account for the change in the timestamp format returned by REST
+363,Karen,1,2016-04-14T18:35:38.155Z,4.713195,6,2,HIM-10654: Integration tests for Token management that are currently in Perl should be moved to Java
+364,Brett,4,2016-04-14T20:35:13.728Z,5.198521389,4,4,Java integration tests for backup copy
+365,Deb,2,2016-04-15T18:03:04.198Z,20.19419028,1,3,"Editing documentation constants for HIM-10720, HIM-10721, HIM-10722, HIM-10724, and HIM-10270"
+366,Brett,1,2016-04-15T20:41:28.443Z,5.199566667,4,2,Adding destination_id property back to support him.1
+367,Bruce,0,2016-04-15T22:07:56.931Z,4.809434722,5,2,HIM-8931: Check the SVA version before performing newer operations.
+369,Brett,0,2016-04-18T15:37:09.954Z,66.82058111,1,1,Fix for bug Him-10859 and Him-10880
+368,Karen,4,2016-04-18T18:45:13.814Z,72.18265194,5,5,HIM-10655: Test case 7837 (content type verification) should be supported in the java-based tests
+370,Ralph,1,2016-04-19T13:09:55.847Z,0.875171944,1,1,HIM-11007: removed additional test to stop the tickler since it was causing intermittent issues when run on Jenkins
+372,Bruce,0,2016-04-20T13:51:43.793Z,13.52682417,1,1,"HIM-10726: exception timestamp should be UTC, not milliseconds"
+374,Bruce,0,2016-04-21T17:05:17.522Z,17.29031028,2,1,Fixed a bug where getCapacityMetrics is waiting forever for the wrong shell prompt.
+376,Brett,1,2016-04-22T14:14:35.378Z,19.09333417,6,2,"HIM-9342: Prevent creating a datastore, policy or renaing policy with duplicate name"
+380,Bruce,2,2016-04-22T18:31:26.679Z,4.075158889,8,2,HIM-10754: Query datastores on hypervisor_object_id.
+378,Bruce,0,2016-04-22T19:18:43.745Z,22.84640389,1,1,HIM-9120: Add license name to swagger docs so swagger-diff will work.
+375,Alex,8,2016-04-22T20:25:07.317Z,25.54360833,13,11,Unified code for metrics tests (clusters and vms)
+382,Brett,0,2016-04-25T11:06:15.107Z,62.63988972,1,3,Adding affected objects to svt-backup-lock.
+381,Karen,0,2016-04-25T11:06:56.233Z,63.07565556,2,1,Fix for failing session grant tests run under ATF for svtbuild user
+383,Bruce,0,2016-04-25T15:46:48.941Z,0.311053889,1,1,HIM-9120: Removed the license name for now.
+384,Karen,1,2016-04-25T16:55:00.204Z,1.342844722,3,2,Rest-automation -changed defaults of run runNonDestructiveTestsOnly and deleteObjectsAfterCreatingThem to true when tests are executed from a jar
+385,Alex,0,2016-04-25T20:36:48.368Z,0.849768889,1,1,id changed to vmId in vm metrics API
+379,Karen,10,2016-04-25T20:57:01.983Z,96.39073667,19,11,HIM-10284: REST changes to accept request from newer version of REST Service
+386,Ralph,0,2016-04-25T21:10:42.138Z,0.416954444,2,3,"HIM-9529: changed logging configuration to append to logs up to a max, and then archive files."
+377,Bruce,7,2016-04-26T19:37:03.438Z,119.2944922,7,5,SEC-941: Do not save the HMS password with the SvtUser - security hole.
+388,Karen,0,2016-04-26T20:44:45.653Z,0.48786,1,1,Update access_token after refresh_token operation
+387,Brett,1,2016-04-27T11:08:24.360Z,16.31946861,9,2,HIM-10744: POST - Backup Lock
+391,Brett,2,2016-04-28T11:36:15.148Z,16.19675167,7,4,HIM-8645 : Added arbiter_connected and arbiter_address to omnistack_cluster.
+393,Karen,0,2016-04-29T12:25:32.753Z,17.55569667,2,1,Changed expected exception message of  InvalidPasswordGrant test
+394,Bruce,0,2016-04-29T12:26:50.123Z,16.41242806,1,1,Better error handling when metrics not available.  Just skip the test.
+395,Brett,2,2016-04-29T18:08:47.433Z,22.01924861,5,4,HIM-6526 : Query VM Storage Replica Set
+396,Ralph,1,2016-04-29T18:09:12.714Z,1.958735556,1,3,update from Himalayas.2 to fix build issue
+398,Bruce,1,2016-05-02T15:04:48.824Z,1.427462778,2,1,HIM-11512: Coverity fixes.
+397,Bruce,1,2016-05-02T19:08:33.056Z,43.2059375,9,1,HIM-11176: Check SessionFactory.getSystemType() and do the right thing for vSphere or HyperV.
+399,Bruce,0,2016-05-02T21:23:15.753Z,2.178781944,1,1,HIM-10754: automation test for query on hypervisor_object_id
+400,Brett,2,2016-05-03T13:26:27.035Z,17.08580806,1,3,Cluster Integration test changes for arbiter_connected and arbiter_address
+401,Ralph,1,2016-05-03T14:17:25.650Z,1.867981667,1,3,HIM-6526 and HIM-8645: needed to account for new fields in the integration test when all fields are asked for.
+403,Karen,1,2016-05-03T20:09:53.651Z,1.243161667,3,3,Changes in rest-automation to be compatible with Himalayas 1 source code
+402,Bruce,0,2016-05-03T20:55:03.787Z,2.113003611,4,2,Unit tests work
+404,Brett,1,2016-05-04T12:04:58.370Z,16.6767225,2,3,HIM-6526:Java Integration Test for VM Storage Replica Set.
+405,Bruce,0,2016-05-04T13:13:51.821Z,15.58065611,3,1,HIM-9120: Add license.name to swagger.
+406,Bruce,0,2016-05-05T17:48:37.843Z,2.277626111,3,1,HIM-11647: Allow REST service to connect to remote SVA running Hyper-V build.
+408,Karen,7,2016-05-06T13:28:56.422Z,18.64204556,9,5,HIM-9345: Allow multiple backup policy rules to be added or edited in one operation
+409,Bruce,0,2016-05-06T18:26:06.707Z,22.07633,1,1,FRB-1923: change svt_functions to use eth0 rather than localhost
+411,Brett,0,2016-05-06T18:38:39.215Z,0.284918611,2,3, HIM-8645 : Fix for wrong arbiter_address fetched in case of deleted node available in Federation_List response.
+412,Karen,0,2016-05-09T20:11:23.198Z,2.839971667,5,2,Refactored code to have all responseEntity logic for POST requests at one single place
+413,Bruce,1,2016-05-10T15:52:56.436Z,0.981161944,3,3,HIM-11709: Changed GET version to return JSON keys with underscores.
+407,Alex,22,2016-05-10T19:17:55.608Z,123.2463067,21,19,Hardware Information for a Host API and unit tests implemented
+414,Ralph,12,2016-05-11T19:19:32.483Z,24.5744825,15,17,Introduce HMS support via HVAL
+417,Bruce,0,2016-05-11T19:31:48.332Z,0.348201111,1,1,HIM-11709: Updated rest-automation tests for the new version keys with underscores.
+418,Ralph,0,2016-05-12T13:40:03.725Z,1.633048889,1,2,fixed unit test issue
+416,Alex,2,2016-05-12T17:52:09.910Z,43.7831225,12,4,empty space removed and host test added to get hardware api
+419,Brett,0,2016-05-12T21:12:35.149Z,2.603491944,3,2,HIM-11734 - Adding affected objects for policy rule edit composite task.
+420,Karen,0,2016-05-13T11:15:17.901Z,13.90074778,8,5, HIM-9345: Allow multiple backup policy rules to be added or edited in one operation
+422,Bruce,0,2016-05-13T20:38:53.588Z,6.506546111,1,1,HIM-77676: Fixed problems writing out swagger docs during startup.
+423,Ralph,0,2016-05-16T11:56:14.129Z,65.53946972,2,2,Modifications to allow the administrator user to be used to run the tests
+424,Karen,0,2016-05-16T11:56:41.181Z,64.52847889,1,1,HIM-9345: Allow multiple backup policy rules to be added or edited in one operation
+421,Deb,3,2016-05-16T14:37:19.791Z,89.11687944,1,5,Feature/restapi
+425,Alex,3,2016-05-16T18:01:34.138Z,20.84746528,7,8,HIM-11817 & HIM-11500 fixed
+426,Bruce,0,2016-05-17T11:07:12.934Z,13.03340222,2,1,HIM-11675: Add contact name to get swagger2markup to work.
+427,Alex,0,2016-05-17T16:23:07.029Z,2.208811389,1,1,HIM-11817 Battery health status documentation adjusted
+428,Bruce,0,2016-05-17T18:40:40.754Z,2.030141944,1,1,HIM-6526: Fixed a NPE failure with the getDifferentOrderParamsTest() since it does not ask for replica_set.
+429,Brett,0,2016-05-17T20:24:00.553Z,1.845712222,4,2,HIM-9345: Removing rules from task affected object list for any rule operation.
+430,Alex,1,2016-05-18T17:34:57.943Z,22.72601917,2,2,HIM-11817 tia_card changed to accelerator_card.
+433,Alex,0,2016-05-22T21:08:26.524Z,70.59756528,3,1,HIM-5311 removing manufacturer from tia card and battery
+435,Bruce,0,2016-05-24T18:21:22.367Z,2.733125278,1,1,"HIM-9343: Check for datastore policy by name rather than ID, since datastore does not have the policy ID."
+436,Alex,0,2016-05-24T21:27:31.090Z,1.341720556,2,1,HIM-12275 getHostsHardwareInfo FAILED expected <null> but was <0x113> fixed.
+438,Alex,5,2016-05-26T17:11:29.647Z,27.09255722,20,7,HIM-12298 GET: Query Host performance via REST (metric) implemented
+439,Bruce,0,2016-05-26T17:11:56.751Z,15.87727583,2,1,HIM-12445: Remove the Created by SimpliVity name info in swagger.
+440,Bruce,0,2016-05-26T17:12:28.054Z,1.834166389,2,1,HIM-9343: automated tests for deletePolicyAssociateWithDatastoreTest() and deletePolicyAssociateWithVMTest().
+442,Bruce,0,2016-05-27T13:52:18.663Z,18.47710083,3,1,HIM-8931: Updated root index.html with changes from marketing.
+441,Alex,0,2016-05-27T17:33:50.010Z,23.78903139,2,2,HIM-12298 GET: Query Host performance via REST (metric) ATF implemented
+443,Karen,0,2016-05-27T21:40:49.941Z,5.592534722,1,1,HIM-12477: createMultipleNewPolicyRulesTest and ReplaceAllPolicyRulesTest fail - assuming a particular rule order
+444,bmartin,0,2016-05-27T21:41:16.249Z,3.852244167,7,5,Bmartin/HIM-11331 ForRealz
+445,Brett,1,2016-06-01T20:28:03.066Z,2.397030278,2,3,HIM-4143 : Server side changes to add datacenter id and policy id to single datastore thrift call
+446,Alex,0,2016-06-02T11:10:23.371Z,13.5245875,1,1,"HIM-5311 ""Retrieves hardware module information for the host"" chnaged to ""Retrieves hardware  information for the host"""
+447,Brett,0,2016-06-02T14:26:45.644Z,14.55089944,9,4,HIM-4143 : REST side code changes to use updated thrift api for Datastore_List.
+448,Bruce,0,2016-06-03T01:30:05.445Z,4.019224167,1,1,"HIM-11911: Override tokenStore.getAccessToken() to return null, creating a new token with each login."
+449,Bruce,0,2016-06-03T01:31:07.647Z,3.8222575,1,1,HIM-9886: Increased the width of the yellow area in swagger docs to match the text width.  
+450,Bruce,0,2016-06-03T18:55:14.495Z,0.769349167,2,1,HIM-9886: Reduced the amount of text and the width of the yellow boxes on swagger page.
+452,Deb,1,2016-06-03T20:29:34.035Z,0.990377778,1,1,"Editing REST API Swagger doc constants for PSI5 Sprint 3 changes associated with HIM-5311, HIM-9343, HIM-11331, and HIM-12298"
+451,Bruce,0,2016-06-06T11:07:19.611Z,64.70799444,2,1,HIM-11911: rest-automation tests to make sure 2 different clients with different tokens do not interfere with each other.
+453,Bruce,0,2016-06-06T19:14:21.121Z,2.964544722,1,1,HIM-9343: Error message changed in SvtDocumentationConstants needs to be reflected in rest-automation.
+454,Bruce,1,2016-06-06T20:51:31.027Z,4.530599722,1,2,HIM-13009: ObjectNotFound error thrown when getting datastores of an unassigned policy.
+456,Bruce,0,2016-06-08T13:28:34.096Z,16.9941775,1,1,HIM-13047: Make sure to copy the graphics along with index.html for SVA home page.
+457,Bruce,0,2016-06-10T11:10:38.808Z,16.01199278,4,1,HIM-13171: Fixes to rest-automation based on failures.
+459,Ralph,1,2016-06-13T11:14:16.852Z,64.72392917,4,2,HIM-13302 and FRB-5077 - addressed a few logic issues in the tests
+455,Alex,14,2016-06-13T23:45:21.529Z,169.593115,23,25,HIM-11670 GET: Query host capacity utilization history (metric)
+461,Ralph,1,2016-06-14T13:44:13.343Z,0.6528775,1,1,HIM-13156: changed logic to not run editRuleMaxBackups if we are running in nondestructive mode
+460,Bruce,1,2016-06-14T14:55:55.094Z,18.03010083,4,1,HYP-2064: rest-automation checks for hyper-v configuration.
+462,Ralph,0,2016-06-14T15:47:14.382Z,0.612875833,1,2,"HIM-13156: backed out ""destructive"" check, and renamed test to reflect that it is supposed to fail"
+463,Val,0,2016-06-16T14:34:09.524Z,47.03153722,3,2,HIM-13304: Skip test cases in nondestructive mode
+465,Bruce,1,2016-06-16T20:51:45.029Z,2.502358333,2,2,HIM-13375: Add calculated virtual_machine_state to backup objects.
+464,Val,0,2016-06-17T13:52:04.901Z,22.27988694,2,2,HIM-13304: Skip test cases for datastores and policies in nondestructive mode
+467,Val,0,2016-06-20T22:07:31.915Z,6.51677,2,1,HIM-13276: Add verification checks in destructive mode
+468,Bruce,1,2016-06-21T15:19:40.454Z,18.09647528,6,2,HIM-13683: Added hypervisor_object_id to omnistack_cluster objects.
+469,Bruce,0,2016-06-21T16:10:48.791Z,0.488921667,2,1,HIM-13555: Use the PotentialFeatureVersion rather than the CurrentFeatureVersion so that we test out the new code after upgrade during pre-commit.
+470,Ralph,0,2016-06-21T16:21:36.685Z,0.018966389,2,1,HIM-13555: Use the PotentialFeatureVersion rather than the CurrentFeatureVersion so that we test out the new code after upgrade during pre-commit.
+471,Ralph,0,2016-06-21T20:03:32.227Z,0.001711944,2,2,"Revert ""HIM-13555: Use the PotentialFeatureVersion rather than the CurrentFeatureVersion so that we test out the new code after upgrade during pre-commit."""
+472,Val,0,2016-06-23T13:29:47.028Z,24.20022861,3,3,HIM-13276: Add more verification checks for destructive mode
+473,Bruce,1,2016-06-23T14:21:17.579Z,16.63161667,2,1,HIM-13749: Update REST version from 1.1 to 1.2.
+466,Alex,2,2016-06-23T18:44:44.544Z,146.1267631,6,3, HIM-11670 GET: Query host capacity utilization history (metric) RA tests
+474,Ralph,1,2016-06-24T11:09:40.919Z,15.65377472,1,1,HIM-13156: changed check to validate number of VMs returned because we may get less returned if the user doesn't have permission to see some of them.  This was inadvertently breaking a number of tests.
+475,Bruce,1,2016-06-24T15:34:09.791Z,19.92988639,12,2,HIM-13749: Added Accept and Content-Type application/vnd.simplivity.v1.2+json.
+476,Val,0,2016-06-27T17:22:36.021Z,77.86575139,4,1,HIM-13276: Add verification checks for cleanup mode
+477,Val,0,2016-06-27T17:23:00.481Z,75.3107025,2,2, HIM-13763: Add check for state of backup
+478,Bruce,0,2016-06-27T17:23:47.536Z,2.10442,1,1,HIM-13831: Check to make sure the vCenter or Hyper-V session is validSession() before adding it to the hmsSessionMap.
+481,Bruce,0,2016-06-27T20:16:07.743Z,1.228216389,6,1,HIM-13375: rest-automation tests for backup virutal_machine_state.
+483,Bruce,0,2016-06-28T17:45:48.518Z,2.478533889,1,1,HIM-13831: Fixed unit tests so they pass.
+484,Bruce,0,2016-06-28T18:10:42.043Z,2.630567778,1,1,HIM-13308: Update errors.xml with the latest copy from src/control/task.
+485,Bruce,0,2016-06-28T21:39:12.231Z,1.479902778,1,1,HIM-13683: Need to add hypervisor_object_id field to notMetricFields.
+487,Bruce,5,2016-06-30T14:24:35.842Z,22.67846333,3,3,HIM-13749: Fixed problems with TestRestApiVersion to handle different versions.
+479,Karen,16,2016-07-01T13:10:13.849Z,93.14518167,10,8,HIM-13451: Create DB connection through schema for read-only views
+480,Brett,1,2016-07-01T13:52:30.477Z,91.38057417,3,14,"HIM - 13306 : Create Jdbc Datasource Conf details, Schema, Role and View on svtctl startup."
+482,Alex,14,2016-07-01T22:19:47.654Z,97.50530333,10,12,"HIM-11670, HIM-14000  Query host capacity utilization history (metric) limits added and streams removed (counters missing under havy load)."
+488,Karen,0,2016-07-04T14:09:02.158Z,64.32188028,2,1,HIM-13451: Create DB connection through schema for read-only views
+490,Karen,0,2016-07-06T11:09:10.731Z,14.35619778,1,1,HIM-13451: Create DB connection through schema for read-only views
+492,Bruce,2,2016-07-06T18:58:03.391Z,3.752763333,2,3,HIM-14087: Make the rest-automation.jar file run on Java 1.6
+493,Deb,0,2016-07-07T20:24:18.722Z,23.77516278,1,1,Edit doc constants for new metrics error message for HIM-11670
+494,Bruce,0,2016-07-07T20:26:50.684Z,23.47120583,1,1,HIM-14206: Incorrect parsing of JSON replica_set from virtual_machines
+495,Val,0,2016-07-08T14:36:56.325Z,25.6330225,2,2,"HIM-14043: Test cases are marked as skipped, if dependency for the test is not defined. And added logic for add rule in TestPolicies."
+496,Bruce,0,2016-07-11T15:53:21.706Z,72.52956444,13,1,FRB-4374: Fixed several Eclipse compiler warnings in rest-automation
+497,Alex,0,2016-07-11T18:07:37.744Z,73.911895,2,5,HIM-14204 
+498,Brett,0,2016-07-11T18:56:04.243Z,48.09026139,2,7,HIM-13306: Running fixup_schema_db_access from svfs.conf on post start process.
+500,Bruce,1,2016-07-13T18:37:40.449Z,47.33023194,3,1,HIM-13800: Added compute_cluster_name and compute_cluster_hypervisor_object_id to host object.
+499,Val,0,2016-07-13T18:40:57.096Z,50.13815444,3,3,HIM-13278: Added logic for create new backup from existing vm
+501,Alex,8,2016-07-13T18:45:06.134Z,45.63640139,1,3,HIM-14204. Metrics validation will not be performed on a cluster with a removed node.
+502,Bruce,0,2016-07-14T14:01:34.644Z,18.71288778,2,1,HIM-14392: CopyBackup fails if all nodes in selected datacenter are removed
+503,Alex,1,2016-07-14T16:09:19.934Z,19.79744361,3,2,performance and capacity models counter names added to the documentaion
+505,Karen,0,2016-07-14T20:24:59.012Z,1.189666111,1,2,HIM-13306: Edited prepare-mgmt-schema-views.sql
+506,Bruce,0,2016-07-15T00:47:49.982Z,2.803296111,1,1,HIM-5849: Added test for BodyTooLarge exception if Content-Length > 3K
+508,Ralph,0,2016-07-18T18:57:53.740Z,3.108704444,5,16,"Refresh from latest Himalayas.2, including REL-6008 to address nightly build failures"
+504,Val,0,2016-07-20T11:47:06.557Z,142.0995694,3,3,HIM-13278: Added logic for create new datastore if only one datastore exists
+511,Alex,1,2016-07-20T16:45:21.849Z,2.341313056,1,1,HIM-11670. Metrics model documentation adjusted to a single line (return char removed)
+512,Bruce,0,2016-07-20T19:45:41.876Z,1.7558575,1,1,HIM-13800: Forgot to add compute_cluster_name/hypervisor_object_id to notMetricFields.
+513,Alex,0,2016-07-20T20:35:38.395Z,1.389841944,4,1,HIM-14405. Date time stamp property is added to the host metrics info.
+507,Karen,32,2016-07-21T01:56:04.854Z,145.4686003,12,8,HIM-13459: Create Data Access Object (DOA) & Service layer for the VM Object
+514,Alex,0,2016-07-21T18:48:19.376Z,1.372185556,2,2,HIM-14204 Date property added to the HostMo object
+515,Bruce,0,2016-07-21T19:38:56.909Z,1.242200833,1,1,HIM-13800: rest-automation tests for compute_cluster info for host objects
+516,Bruce,0,2016-07-21T20:12:28.748Z,0.404144444,1,1,HIM-13800: Spelled associated incorrectly.
+509,Brett,8,2016-07-22T13:37:51.657Z,65.76809556,13,7,[HIM-12603] Integrate VMWare CacheInstance framework to HVAL in order to get VM properties from Hypervisor efficiently.
+517,Brett,0,2016-07-22T16:07:56.387Z,0.395108333,1,1,[HIM-12603] Fix for failing Unit Test to EventMgr due to HVAL changes
+518,Brett,0,2016-07-22T21:43:23.752Z,1.531864722,3,3,[HIM-12603] Adding REST API ApplicationListener class to enable cache on REST API Start up.
+519,Karen,11,2016-07-26T15:08:12.538Z,89.44849333,14,4,HIM-14654  Create Data Access Object (DOA) & Service layer for the VM Object
+510,Val,0,2016-07-27T11:08:44.347Z,167.8275544,5,7,HIM-13278 : Added deletion logic for newly created objects(if they do not exist)
+520,Alex,1,2016-07-27T13:55:37.696Z,16.2060425,5,1,HIM-14204 Date stamp added to Host test.
+10,Alex,0,2016-08-11T16:32:59.259Z,22.83730139,3,1,HIM-15048 getClustersTest Failed - java.lang.ClassCastException: fixed by adding selection for a single date point collection
+12,Bruce,0,2016-08-12T11:15:54.133Z,18.83280444,2,1,HIM-15237: Need better assert messages
+16,Bruce,0,2016-08-12T16:39:47.332Z,0.850656944,2,1,"Fixed compiler warnings using @SuppressWarnings(""unchecked"")"
+17,Bruce,0,2016-08-12T17:00:58.249Z,0.440108056,1,1,Updating moduledependencies to latest versions
+15,Bruce,0,2016-08-12T18:54:36.783Z,21.60451167,12,1,HIM-15072: Allow any Simplivity Content-Type version for operations - do not block older versions
+14,Bruce,1,2016-08-12T20:34:00.315Z,26.62551722,3,3,Another approach to testing for V1.2 and V1.1
+13,Bruce,0,2016-08-12T20:48:06.081Z,28.18803222,1,1,HIM-15245: Split repo api.war lost all the folder structure of /WEB-INF/classes
+5,Alex,11,2016-08-15T18:41:19.308Z,167.4980744,15,11,"HIM-11674 GET: (Moved from merge conflict branch A1) Add power_state field to virtual_machine objects moved from private branch.Unit tests created. The state added to virtual machine service, and will be collected with HmsClient."
+19,Bruce,1,2016-08-15T22:07:14.114Z,55.25254111,22,3,HIM-13767: Added V1 and V1.1 content type tests for all object types
+8,Alex,2,2016-08-16T14:51:44.049Z,143.8749953,1,11,Power state fields validation added to VM HIM-11674
+21,Bruce,1,2016-08-16T20:52:10.099Z,4.209026389,4,1,HIM-11674: Fixed a bug where 3 VM automation tests failed. Also made getVMsPerformanceTest faster.
+20,Alex,5,2016-08-17T11:18:00.421Z,40.10367083,9,3,HIM-12855 GET: Add timezone attribute to omnistack_clusters
+23,Bruce,0,2016-08-18T19:28:32.394Z,46.43138472,14,1,HIM-13767: ContentType support for older REST servers
+26,Ralph,0,2016-08-22T11:09:12.696Z,92.00673833,1,3,HIM-14756: added logic to copy the errors.xml file that gets extracted to the src area so that it can be directly consumed when running under Eclipse
+25,Alex,1,2016-08-22T12:59:42.903Z,93.90486583,1,2,Integration tests added to HIM-12855 Add time zone attribute to omnistack_clusters
+29,Alex,1,2016-08-24T13:16:35.168Z,40.75459917,1,4, OMNI-17189 TimeZone missing  - AssertionErro
+28,Ralph,1,2016-08-25T12:11:38.651Z,64.02885889,4,1,OMNI-1023: added in archived versions of api-docs in order to make it easier to identify the delta of the API from version to version
+27,Val,0,2016-08-25T13:27:26.990Z,73.3171025,1,4,HIM-10640 : Added test case for restore backup to new VM having special character(/)
+32,Bruce,1,2016-08-26T16:29:58.900Z,18.67275528,10,2,OMNI-922: Refactor rest-automation getFeatureVersion() to use REST version rather than SVA feature version
+34,avolanis,0,2016-08-27T20:26:12.804Z,0.992004444,4,1,Small changes to consume the upstream dependencies
+31,Alex,2,2016-08-29T22:03:42.852Z,96.53950833,3,2,OMNI-17263 OutOfMemoryError on Cluster Metrics request fixed by adjusting sec and min limits
+35,Bruce,0,2016-08-30T11:17:13.108Z,46.08453111,13,1,OMNI-17376: Check if GET query contains order param but no sort param.
+40,Ralph,0,2016-08-31T14:13:43.810Z,17.45579667,2,1,"OMNI-1023: as part of a build, we will now copy and format the generated api-docs.json into the archive folder for easy comparison"
+39,Bruce,4,2016-08-31T16:01:45.265Z,22.03453139,15,3,OMNI-2608: POST: Set backup policy for datastore
+41,Alex,3,2016-08-31T18:50:31.152Z,1.760516389,2,3,OMNI-17263 OutOfMemoryError on Cluster Metrics request fixed by limiting seconds and minutes date time ranges
+37,Karen,14,2016-08-31T20:24:15.561Z,48.22115056,24,4,OMNI-17324: Merge MMR changes to split repo
+43,Bruce,0,2016-09-01T14:58:18.076Z,13.66418306,1,1,OMNI-2608: check for invalid policy id and throw InvalidParamerException
+45,Bruce,0,2016-09-01T15:56:37.011Z,1.8063475,1,1,HYP-3084: Problem restoring backup from deleted VM and datastore
+46,Bruce,0,2016-09-01T16:51:36.420Z,0.923696667,1,1,OMNI-2608: rest-automation tests for datastore set_policy
+47,Ralph,0,2016-09-01T19:44:12.243Z,2.3574325,3,1,"Revert ""Merge pull request #44 in OMNI/svt-rest-api from ~JKING/svt-rest-api:depurgation to master"""
+50,Val,0,2016-09-06T14:45:16.276Z,97.55595306,1,1,OMNI-2608 : Update test cases for TestDatastore in rest-automation which modify existing objects.
+51,Ralph,0,2016-09-07T14:22:21.821Z,19.77597917,1,1,updated version to reflect PSI 7 content
+52,Bruce,0,2016-09-07T19:18:17.357Z,3.0759825,3,1,OMNI-17514: Replace Datastore_Create() thrift call with newer Datastore_Create2()
+53,Ralph,0,2016-09-08T18:55:55.615Z,0.549637778,1,1,OMNI-17831: added code to make sure that when a rule is being created we create a body that is appropriate to the content type being tested
+54,avolanis,0,2016-09-12T20:28:49.971Z,20.29403972,2,1,Eliminate override for transitive vijava dependency
+57,Karen,0,2016-09-13T18:55:56.577Z,0.435703333,2,1,OMNI-17882: IOPS is spelled IPOs in swagger docs
+59,avolanis,0,2016-09-13T22:17:17.863Z,1.144879722,0,1,OMNI-18049: Empty commit to cause rebuild
+55,Brett,18,2016-09-14T17:21:29.582Z,51.63383861,21,10,[OMNI-488][OMNI-17236] REST API and MMR integration for new Java based hive_query API
+58,Bruce,5,2016-09-14T19:02:17.111Z,23.61123083,11,2,OMNI-1155: GET datastore hypervisor_free_space
+61,Bruce,0,2016-09-14T19:59:56.351Z,0.600231667,2,1,Updates to remove vijava dependency and grab the latest of all modules
+60,Alex,3,2016-09-14T20:18:06.877Z,2.785040833,3,16,"OMNI-17444 [High] The Host Model is missing some VM properties - SVA state, storage IP, federation IP implementation"
+62,Bruce,0,2016-09-15T19:09:49.606Z,0.883960833,13,1,OMNI-18771: Update REST version to 1.3
+63,Brett,1,2016-09-16T18:11:00.138Z,20.57124806,32,3,OMNI-17752 Move all Thrift call from svt-rest-api to svt-managedmodel-retriever
+64,Alex,1,2016-09-16T18:48:20.438Z,4.004449444,1,1,OMNI-17444 integration tests added
+65,Brett,0,2016-09-16T18:48:34.705Z,0.501990833,3,2,[OMNI-488] Adding DatabaseConnectionUnavailaleException to API interface.
+66,Bruce,0,2016-09-19T21:25:20.216Z,1.426898333,1,1,OMNI-3130: getClusterToClusterThroughput method added to ClusterService
+68,Bruce,0,2016-09-20T16:19:39.870Z,1.167267778,1,1,FI-1812: Change the session tickled log message from debug to trace level.
+67,Brett,1,2016-09-20T20:53:31.867Z,19.46350861,13,2,"[OMNI-488] Added Unit test for VirtualMachineAPI, moved hive_Status call to MMR to complete API"
+69,Bruce,0,2016-09-21T15:36:50.377Z,13.73913583,2,1,OMNI-1155: convert MB to bytes for datastore hypervisor_free_space
+71,Ralph,3,2016-09-22T11:06:24.960Z,19.43706222,8,3,OMNI-18031: changed the way that HVAL sessions are found to be used in HmsHelper requests by having the helper use only the sessions that are associated with the OAuth token that is in effect.
+73,Brett,0,2016-09-22T11:06:45.678Z,14.85113889,1,1,OMNI-2602 : Mismatch between count parameter and actual number of fetched vms for ReadOnlyUser
+74,Bruce,0,2016-09-22T11:08:26.029Z,11.69194917,1,1,Added REST_VERSION_1_3 and fixed null pointer exception
+77,Brett,0,2016-09-22T18:44:44.092Z,0.59652,1,2,[OMNI-19076] x-total-count value for VMs is incorrect
+72,Karen,8,2016-09-22T19:42:00.697Z,26.10601111,6,4,OMNI-18007: Make HIVE_STATUS asynchronous to improve the performance
+78,Ralph,0,2016-09-22T20:29:03.603Z,0.897488611,1,2,OMNI-18771: updated version test to include support for version 1.3
+79,Karen,1,2016-09-23T12:03:18.701Z,15.02866306,21,1,"OMNI-18943: In swagger docs, for each object model, only optional fields should be stated optional"
+81,Karen,0,2016-09-26T10:53:30.266Z,68.78196861,2,1,"OMNI-18884: Backup type enum should be ['POLICY', 'MANUAL', 'UNSPECIFIED']. Same should be reflected in swagger docs"
+83,Karen,0,2016-09-26T16:23:57.339Z,0.547918056,2,1,OMNI-19212: DEV: Add more Unit tests for code coverage
+82,Brett,0,2016-09-26T18:26:25.900Z,67.506115,13,3,[OMNI-18763] Implement GET virtual_machines/id using MMR
+84,Bruce,0,2016-09-27T11:08:18.762Z,12.52648583,1,1,OMNI-19090: Change logging level to ERROR for springfox and springframework.
+86,Karen,0,2016-09-27T18:24:42.023Z,3.986411111,2,1,OMNI-19212 DEV: Add more Unit tests for code coverage
+85,Val,0,2016-09-27T18:25:11.962Z,7.878878889,3,2,OMNI-19049 : Make rest-automation compatible with HIM1.
+87,Bruce,1,2016-09-27T18:53:25.752Z,0.846636667,1,3,OMNI-1155: Add (in bytes) to space fields
+88,Brett,0,2016-09-28T11:10:49.088Z,13.56519833,6,1,[OMNI-18082] Pass all parameters from backupcontroller to service and MMR through single class object.
+90,Karen,0,2016-09-28T15:31:10.472Z,0.566851389,1,1,OMNI-19212: DEV: Add more Unit tests for code coverage
+92,Bruce,0,2016-09-28T19:30:46.204Z,3.009950556,1,1,OMNI-5088: Log the IP address of the original REST client
+93,Bruce,0,2016-09-28T20:38:52.888Z,2.809189444,2,1,OMNI-19492: Document object_type in affected_objects for tasks
+94,Ralph,0,2016-09-29T11:09:11.307Z,14.51463194,24,1,OMNI-19248: rest-automation will now be built as part of the project-level gradle build.
+95,Bruce,0,2016-09-29T14:51:43.260Z,15.56922167,2,1,OMNI-1155: rest-automation updates for datastore hypervisor_free_space
+98,Karen,0,2016-10-03T14:51:46.491Z,65.64895444,3,1,OMNI-17711: Update REST backup state enum with only customer visible values
+96,Brett,9,2016-10-03T18:34:29.314Z,110.9635292,12,7, [OMNI-18082] Added Backup DAO/Service layer
+100,Karen,3,2016-10-04T18:54:11.243Z,22.32659694,2,2,OMNI-19592: Run the REST/MMR service locally in Eclipse and connect to a remote DB view
+99,Brett,5,2016-10-04T19:47:41.178Z,23.83071667,11,3,[OMNI-17419] GET virtual_machine - add filter on state
+101,Bruce,3,2016-10-05T17:06:14.067Z,22.57726806,15,4,OMNI-19038: Reuse the same hypervisor session(s) for the same user even if they have multiple oauth tokens
+102,Karen,1,2016-10-05T20:11:57.092Z,1.797854167,7,3,Ravilla/OMNI-19766 : RESTApiApplicationListener is running ahead of runMain method of REST API
+104,Ralph,0,2016-10-06T17:32:12.943Z,0.619198611,1,2,OMNI-19759: log the current version of the rest automation tool at startup
+103,Val,0,2016-10-07T15:32:18.054Z,27.66680972,10,3,"OMNI-19854 : Update test cases in rest-automation, to make compatible with content type V1_3 and also added separate package to support backward compatibility."
+106,Brett,0,2016-10-07T15:52:08.432Z,19.88356611,5,1,[OMNI-19703] Deleted VM shows up without any fields.
+107,Bruce,0,2016-10-07T15:52:38.160Z,18.18057722,2,1,OMNI-19038: Check if the SvtUser is the same before disconnecting session.
+105,Alex,5,2016-10-07T19:59:36.786Z,24.92834944,12,5,Omnistack OMNI-17313  POST: Set time_zone for omnistack_clusters added
+108,Brett,0,2016-10-07T19:59:59.260Z,3.800541389,1,1,[OMNI-17924][OMNI-19076] Mismatch between count parameter and actual number of fetched vms
+109,Brett,0,2016-10-10T10:56:15.922Z,58.30003444,1,1,[OMNI-20013] GET virtual_machines?fields=status not throwing InvalidParameterException
+110,Alex,1,2016-10-10T11:06:24.551Z,55.72674167,1,1,Omnistack OMNI-17313 POST documentation adjusted
+111,Bruce,6,2016-10-10T17:42:13.841Z,16.101265,9,5,OMNI-3130: Metric: Query federation throughput (B/W) between datacenters via REST
+112,Bruce,0,2016-10-10T18:47:04.748Z,0.712760278,2,1,OMNI-3130: Better mock for node to node bytes sent AnalyticsReply2
+113,avolanis,0,2016-10-10T21:07:54.407Z,0.885445833,3,1,[NO TEST] INFRA-1856: Eliminate dependency on svt-hyperproxy-impl
+114,Karen,3,2016-10-11T18:15:14.202Z,21.70458306,4,2,OMNI-488: Create Java backend Hive_Query API for new Access architecture
+115,Bruce,0,2016-10-11T18:48:10.760Z,1.091485,3,1,OMNI-19038: Added GET/PUT configuration for parameters
+116,Alex,0,2016-10-11T20:16:26.777Z,2.414485556,4,1,OMNI-1303: GET: Query omnistack_clusters changes to support Cluster-based Failure Domain implemented.
+119,Bruce,0,2016-10-12T12:43:28.926Z,0.3892125,1,1,OMNI-1303: rest-automation test failing since fd name changed to clusterName
+121,Brett,0,2016-10-12T17:58:41.182Z,0.475083611,1,2,[OMNI-488] ObjectType is not matching in retrieving permission because of case changes for virtual machine.
+122,Brett,0,2016-10-13T13:58:09.883Z,19.44588111,2,4,[OMNI-20153] Moving mgmt-shcema sql file from cfgdb to rest-api/MMR
+123,Brett,1,2016-10-13T14:21:09.016Z,18.12222278,11,3,[OMNI-18074] owner and vmOwner are incorrect for Virtual Machine API
+125,Alex,0,2016-10-13T19:47:55.106Z,2.812388611,2,1,OMNI-17313 POST: Set time_zone for omnistack_clusters integration test added.
+126,Karen,0,2016-10-13T19:48:26.088Z,1.088246667,1,2,OMNI-19534: update virtual_machine view to have vm_app_aware_status column
+127,Karen,0,2016-10-13T19:49:01.246Z,0.573614167,1,1,"OMNI-20214REST-TCS.300.7801 failed - test ""getSessionGrantTokenTest"" (hmsIpparameter cannot be empty)"
+129,Karen,2,2016-10-14T16:14:37.706Z,17.89373333,13,2,OMNI-19535 DEV: Java development
+128,Brett,1,2016-10-14T17:26:00.407Z,20.37189444,1,2,"[OMNI-20184] GET virtual_machines?fields=status,sort=state not throwing correct exception"
+130,Bruce,0,2016-10-14T18:08:25.631Z,18.91339778,1,2,OMNI-3130: Rest-automation test for GET clusters/throughput
+134,Brett,0,2016-10-15T01:21:40.059Z,4.017356111,1,1,[OMNI-20307] Reverting catch block for custom exceptions.
+131,Alex,0,2016-10-17T00:26:00.820Z,72.67924167,3,5,Omnistack OMNI-20279 fixed
+133,Karen,0,2016-10-17T00:26:41.716Z,51.31313028,3,1,OMNI-20308: https://10.153.6.2/api/virtual_machines?fields=id returns no fields
+135,Bruce,0,2016-10-17T00:27:10.913Z,50.79003417,2,1,OMNI-19555: Use the new state=DELETED to find random ALIVE VM.
+136,Bruce,0,2016-10-17T00:29:41.280Z,48.39643139,1,1,OMNI-20332 and OMNI-20009: Policy rules not showing the correct destination cluster based FD info
+137,Bruce,0,2016-10-17T00:33:58.505Z,47.22545583,1,1,OMNI-19884: Update backup object with new cluster/datacenter fields and remove deprecated fields
+138,Bruce,1,2016-10-17T13:48:08.022Z,39.33082417,3,2,Adding more unit tests for code coverage.
+139,Deb,0,2016-10-17T18:44:46.057Z,0.755595,1,1,Edit Swagger doc constants for consistency (OMNI-19015)
+141,Brett,0,2016-10-18T11:08:02.987Z,16.84935167,6,1,[OMNI-2602] Mismatch between count parameter and actual number of fetch vm for ReadOnlyUser.
+140,Karen,1,2016-10-18T14:29:32.863Z,20.24601444,1,2,OMNI-20374: Rest-automation for app_aware_vm_status
+142,Val,0,2016-10-18T14:45:31.825Z,1.677048333,1,1,OMNI-20218: Added negative test cases for empty or invalid time_zone to omnistack_cluster
+144,Ralph,0,2016-10-18T15:59:15.588Z,1.57148,3,2,OMNI-20377: some of the session handling changes broke the abiity to run REST against a local DVM.
+145,Karen,0,2016-10-18T17:05:35.571Z,0.987798889,1,2,OMNI-18080 Create view for datastore and backup
+146,Bruce,0,2016-10-18T19:47:52.601Z,0.801129444,1,1,"OMNI-20445: Compare REST omnistack_cluster_name against computeClusterName, not datacenter."
+147,Bruce,0,2016-10-18T21:29:32.939Z,1.389993333,1,1,OMNI-20444: Use the new OmnistackClusterId and ComputeClusterName for thrift backup objects.
+149,Val,0,2016-10-19T14:41:12.761Z,1.139897778,2,1,OMNI-20178: Added rest-automation tests for virtual_machine state filter and sort.
+150,Karen,1,2016-10-19T18:27:12.710Z,1.567138056,1,1,"OMNI-20558: Unit test ""testEnableDBConnectionPoolWithException"" fails on DVM if svtfs is running locally"
+152,Bruce,0,2016-10-21T13:20:30.195Z,19.36029361,1,1,Changes to put logging back to previous levels
+151,Karen,4,2016-10-21T20:07:48.619Z,27.70861,11,5,OMNI-20694: DEV: Java development - Add Support to query database properties from datastore view
+153,Brett,3,2016-10-21T20:08:07.383Z,24.74265278,4,3,[OMNI-19592] Run the REST/MMR service locally in Eclipse and connect to a remote DB view
+148,Alex,1,2016-10-24T11:04:51.518Z,134.1057553,2,3,ClusterServiceTest causing random test failure fixed
+156,Bruce,1,2016-10-24T15:29:26.604Z,16.99691972,6,1,"OMNI-19539: Refactor rest-automation getSingleObjectTest(), getRandomObjectTest() and getRandomObject()"
+154,Val,0,2016-10-24T16:06:39.582Z,76.55350944,2,3,OMNI-20215: Add an info message in Resttests/TestBackups.
+155,Bruce,3,2016-10-25T13:38:15.457Z,90.48672639,2,2,OMNI-20498: Use OmnistackClusterId rather than Datacenter 
+157,Bruce,0,2016-10-25T13:38:33.165Z,19.44936028,3,2,Removed getBackupsManualOnlyTest and getBackupsPolicyOnlyTest
+158,Karen,0,2016-10-26T11:06:42.358Z,38.5686275,5,1,OMNI-20696 DEV: Add Unit tests
+160,Deb,1,2016-10-26T14:49:24.043Z,24.03795028,1,1,Add a period at the end of the policy general description
+161,Brett,8,2016-10-28T11:05:21.972Z,63.70550361,10,2,[OMNI-18126] Adding back vCenter CacheInstnace to REST
+163,Bruce,0,2016-10-28T11:06:22.350Z,14.61866889,1,1,OMNI-19817: compress svt-rest-api logfiles after they roll
+166,Ralph,0,2016-10-28T13:01:59.091Z,0.0193,1,1,"Revert ""Merge pull request #163 in OMNI/svt-rest-api from ~Bruce/svt-rest-api:Bruce/logback-changes to master"""
+168,Bruce,0,2016-10-31T14:09:23.793Z,38.06650083,5,1,OMNI-20384: GET/HEAD /omnistack_cluster/time_zone_list
+169,Bruce,1,2016-10-31T14:09:36.237Z,37.11220611,2,2,OMNI-21034: Add life_remaining for SSD physical drives
+171,Ralph,0,2016-10-31T16:47:51.594Z,3.509731389,1,3,"Reintroduce the changes for OMNI-19817, along with some logic to allow the unit tests to run properly."
+170,Bruce,7,2016-11-01T09:45:21.093Z,35.18069722,6,5,OMNI-718: Provide upgrade_state and upgrade_task_id for omnistack_clusters
+167,Bruce,1,2016-11-02T10:27:53.868Z,91.21134083,9,3,OMNI-21053: Changes to common-management-model for Cluster based Failure Domains
+173,Ralph,0,2016-11-03T15:13:48.815Z,2.647971111,1,1,OMNI-18762: changed the equality check between old user and new user to just check if the session maps are the same
+172,Brett,6,2016-11-03T16:14:54.407Z,40.83539444,17,2,OMNI-18082 Implement GET for Backup in MMR
+174,Bruce,0,2016-11-03T16:37:53.953Z,2.141358056,3,1,OMNI-21320: replace > null with > /dev/null for CLI commands
+175,Bruce,0,2016-11-04T11:07:03.758Z,19.42614917,1,1,Fix for rest-automation TestPolicy.compareCliAgainstJsonWithoutNameTest()
+176,Bruce,0,2016-11-04T11:07:20.526Z,19.3679025,1,1,"OMNI-18878: To speed up rest-automation, only compare capacity values against one random host."
+178,Brett,0,2016-11-04T11:22:05.507Z,18.60693583,8,2,"[OMNI-18082] Integrating new BackupAPI to REST and also added new field ""consistency_type""."
+177,Bruce,0,2016-11-04T13:35:59.086Z,21.13241778,3,1,OMNI-21310: Unit tests for time zone list.
+179,Bruce,0,2016-11-04T13:36:19.702Z,20.13671694,1,1,OMNI-21374: omnistack_cluster/id/set_time_zone should support V1 content type
+180,Bruce,0,2016-11-04T13:36:36.477Z,19.77587861,1,1,OMNI-21034: rest-automation test for life_remaining.
+181,Bruce,0,2016-11-04T13:36:59.137Z,19.66305361,1,1,OMNI-21034: unit test for life_remaining on physical drives
+184,Karen,1,2016-11-05T18:54:28.555Z,24.98099917,2,2,OMNI-21365 : Session granttype tests failing against customer deployed system 
+185,Brett,0,2016-11-05T18:55:56.341Z,21.76689806,2,1,[OMNI-18126] vCenter caching to REST was filling up upstart log directory
+183,Karen,16,2016-11-07T18:00:02.561Z,75.64681694,32,10,OMNI-18081 Implement a GET for Datastore in MMR
+186,Bruce,1,2016-11-07T18:00:31.155Z,17.54599278,2,1,OMNI-21310: Remove token_refresh capability from REST service
+187,Brett,1,2016-11-07T20:16:56.258Z,0.987703611,7,4,[OMNI-18126] Removing cache when session got removed from rest-api.
+188,Karen,0,2016-11-07T21:19:09.167Z,0.815486111,2,1,OMNI-17418 [High] GET datastores - filter on deleted status and omnistack_cluster_id
+189,Bruce,0,2016-11-07T21:19:25.067Z,0.545581944,2,1,OMNI-21505: Improve performance of getHostCapacityMetricTest and getHostPerformanceTest()
+191,Karen,0,2016-11-08T17:25:55.855Z,2.1072325,3,2,OMNI-18081DONE4 sub-tasksImplement a GET for Datastore in MMR
+182,Val,0,2016-11-08T20:39:40.197Z,105.3740194,4,13,OMNI-21259: Added test cases for incorrect filter value in rest-automation for all objects
+190,Brett,1,2016-11-08T20:59:08.999Z,16.87718222,4,4,[OMNI-18082] BackupAPI Unit Tests
+195,Brett,2,2016-11-11T16:38:11.909Z,22.42896444,49,6,[OMNI-20326] Code clean up MMR
+197,Ralph,0,2016-11-11T17:52:53.496Z,0.892062222,2,1,OMNI-22035: changed the way that SSH sets up logging to make sure that the logger's stream doesn't get closed.
+196,Bruce,1,2016-11-11T18:04:49.536Z,1.646371944,10,2,OMNI-21702: Remove session tickling and do not share sessions between users
+198,Bruce,0,2016-11-11T20:01:02.776Z,0.889079722,3,3,OMNI-22027: Use hive.computeClusterName rather than hive.datacenterName
+200,Bruce,0,2016-11-12T14:48:18.790Z,17.53820083,2,1,OMNI-21702: Remove refresh token references and tests from rest-automation
+201,Brett,0,2016-11-14T16:06:52.628Z,66.60900722,1,2,[OMNI-18126] Reading CacheInstance synchronously
+204,Bruce,0,2016-11-14T20:09:24.001Z,0.500215556,2,1,OMNI-22026: Datastore object is showing name of datacenter for omnistack_cluster_name field
+205,Bruce,0,2016-11-14T21:51:32.282Z,2.065306389,1,1,"OMNI-718:  Added upgrade_state, upgrade_task to getAllFieldsCompareToNoFields."
+202,Brett,2,2016-11-15T12:12:17.997Z,19.86908667,13,4,[OMNI-20326] Code cleanup MMR - BackupAPI
+207,Ralph,0,2016-11-15T12:35:30.121Z,14.73608778,3,1,Refresh of dependencies to latest available.
+208,Brett,0,2016-11-15T20:48:25.839Z,7.190904167,11,2,[OMNI-20326] Code cleanup - Datastore API
+209,Bruce,1,2016-11-15T22:45:14.489Z,4.581118889,2,2,OMNI-22132: Support session grant type for multi-homed vCenters
+210,Bruce,0,2016-11-16T11:58:18.631Z,15.57518972,2,1,OMNI-21702: Remove expired session map from SvtSessionMap - not used
+206,Bruce,2,2016-11-16T11:58:37.133Z,38.75893806,7,3,OMNI-2985: GET connected omnistack_clusters
+213,Brett,1,2016-11-16T16:13:22.008Z,11.60514056,24,2,[OMNI-20326] Code clean up by centeralizing validation code.
+212,Karen,5,2016-11-16T19:47:22.758Z,20.57314,3,4,OMNI-20383 Remove all rules from a backup policy
+219,Karen,4,2016-11-16T21:28:03.059Z,2.304593333,9,4,OMNI-18775: Allow filtering based on OR condition specially needed for get all VM's
+215,Karen,8,2016-11-17T12:04:19.680Z,21.53062889,12,11,Ravilla/bkp retention
+217,Bruce,0,2016-11-17T16:45:18.181Z,23.63550861,3,1,OMNI-22244: Fix for the new JAuth ticket CLI behavior introduced in kit 132
+220,Bruce,0,2016-11-17T17:00:24.888Z,17.83626972,7,3,Bruce/connected cluster unit tests
+218,Bruce,0,2016-11-17T17:00:46.320Z,23.04814278,0,1,OMNI-22192: disable SessionGrant tests temporarily
+222,Val,0,2016-11-18T12:58:59.665Z,23.81257556,1,1,OMNI-21994: Add more automation tests for datastore object
+223,Bruce,0,2016-11-18T12:59:12.688Z,20.24039333,1,1,OMNI-22246: Change logback.xml to remove /tmp/spring.log logging.
+225,Karen,2,2016-11-18T12:59:32.521Z,17.37971528,3,3,OMNI-17912 Add app_aware_vm_status field to virtual_machines
+221,Brett,0,2016-11-18T12:59:54.761Z,36.85480444,22,6,[OMNI-20326] REST Automation and Unit test changes to handle new exception.
+226,Val,0,2016-11-21T14:52:29.308Z,74.3794575,1,3,OMNI-22057: Modified getObjectFilterOnOffsetValueTest for more than 500 objects.
+227,Ralph,3,2016-11-22T11:10:21.865Z,91.82833917,12,7,Official PR to introduce JAuth content into REST
+228,Karen,0,2016-11-22T11:10:42.900Z,91.32992583,2,1,OMNI-20383: Remove all rules from a backup policy
+232,Bruce,0,2016-11-22T11:11:42.719Z,36.08864556,2,1,OMNI-22321: REST omnistack_cluster_name does not match CLI datacenter
+233,Bruce,0,2016-11-22T11:12:01.413Z,35.18507472,1,1,OMNI-22244: skip session grant tests for now
+234,Bruce,0,2016-11-22T11:12:16.672Z,33.75355722,1,1,OMNI-718: Added more tests for upgrade_status OMNI-2985: Automation tests for connected clusters
+235,Ralph,0,2016-11-22T11:12:32.060Z,21.79672861,2,1,"Better late than never, add the v1_2 version of the api-docs to source control"
+224,Karen,1,2016-11-22T16:32:27.457Z,119.4695356,2,3,OMNI-18775: Allow filtering based on OR condition specially needed for get all VM's
+236,Karen,0,2016-11-22T16:33:28.309Z,21.96537417,2,2,Updated logic to map host object type correctly to vmware defined obj name i.e. HostSystem
+230,Brett,1,2016-11-22T16:35:38.967Z,92.09755556,6,3,[OMNI-20326] Added new automation for ObjectNotFoundException for get objects by id
+237,Val,0,2016-11-22T17:44:54.048Z,3.031025833,2,5,OMNI-11206:  Added logic to make empty string as null
+231,Bruce,0,2016-11-22T19:38:06.752Z,45.30055833,6,1,OMNI-21702: Flush out expired OAuth tokens after 10 build up
+239,Brett,0,2016-11-22T19:38:18.393Z,2.6544575,1,1,[OMNI-21316] Empty response when fetching DELETED virtual_machine
+240,Brett,0,2016-11-22T19:38:36.332Z,2.264763889,4,1,[OMNI-21054] REST API /backups not returning any results of read only user
+241,Ralph,0,2016-11-22T20:37:02.846Z,2.350698611,5,2,Update version dependencies
+242,Karen,0,2016-11-22T21:26:24.102Z,1.978496111,5,2,OMNI-18775: Rest automation and Unit tests
+248,Karen,0,2016-11-23T17:09:41.580Z,2.108299444,1,1,compilation errors because of version update
+246,Brett,0,2016-11-23T17:10:14.356Z,17.7367925,2,1,[OMNI-22157] HVALHmsObjectNotFoundException: cache instance returning null value for virtual machine UUID: vm-24831 and property: runtime.host
+245,Brett,0,2016-11-23T17:10:32.449Z,18.36822972,4,1,"[OMNI-20184] GET virtual_machines?fields=status,sort=state not throwing correct exception"
+247,Karen,0,2016-11-23T17:11:05.510Z,2.453191389,4,1,OMNI-20374: AppAwareVmStatus: Automation Work
+250,Karen,0,2016-11-23T18:36:45.855Z,1.262811667,10,1,OMNI-22062OutOfMemoryError when try to fetch large number of objects from REST - Max limit of 5000
+249,Karen,0,2016-11-23T18:47:18.465Z,1.578410833,1,1,OMNI-22428: postPolicyRuleWithEmptyBodyTest is failed in rest-automation
+251,Brett,0,2016-11-23T23:55:52.695Z,4.109129722,23,4,[OMNI-22001] Reduce the number of info and debug logging messages
+252,Bruce,0,2016-11-28T14:43:48.398Z,16.61290389,18,1,OMNI-21860: Remove references to datacenter in the code
+255,Karen,0,2016-11-28T16:19:17.790Z,0.325041944,2,1,"OMNI-22491: Update message from ""Atlease one rule with.."" to ""At least one rule with."
+256,Bruce,0,2016-11-28T21:42:19.312Z,1.438210833,1,1,OMNI-22104: getObjectsSortByExpirationTimeTest TEST FAILED: backups objects are not sorted correctly
+257,Ralph,0,2016-11-28T23:42:29.847Z,2.744810278,1,1,REL-6633: original change needed to have a double quote arokund $builddir in order to be interpreted correctly.
+254,Val,0,2016-11-29T15:14:12.773Z,27.35225333,1,2,OMNI-22428: Added postPolicyRuleWithEmptyBodyReplaceRule test in resttests/TestPolicies.java
+258,Brett,1,2016-11-29T15:45:20.682Z,18.24923278,7,2,[OMNI-22531] VirtualMachineAPI is not returning all objects for administrator login in case of limited privileged user login prior to administrator.
+253,Val,0,2016-11-29T15:45:41.431Z,29.49752833,1,3,OMNI-22061: getBackupsTest() working fine - When there are thousands of backup objects.
+259,Brett,0,2016-11-29T19:33:51.235Z,3.619031111,15,1,[OMNI-22526] BackupAPI has no permission to view orphan vms backups
+261,Ralph,0,2016-11-29T20:46:07.198Z,0.078375278,1,1,pegged our CMM version dependency to 10.8.0 in order to allow builds to succeed
+263,Ralph,0,2016-11-29T21:00:23.475Z,0.079216389,1,1,bumped up minor version to satisfy module dependency change
+262,Bruce,0,2016-11-29T21:25:58.102Z,0.582244444,3,1,OMNI-22526: Log the correct SvtErrorReturnException message
+264,Val,0,2016-11-30T15:39:27.789Z,3.548402778,1,2,OMNI-22428: get random policy object having no rules 
+268,Ralph,0,2016-12-01T14:55:28.766Z,2.545762222,5,2,This will get us aligned with the latest PSI upstream content
+244,avolanis,0,2016-12-02T01:25:08.550Z,218.8028406,3,1,Merge code from sierra nevada
+271,Ralph,0,2016-12-02T16:34:57.209Z,0.955097222,1,1,bump version to PSI 8 level
+266,Brett,0,2016-12-02T16:35:29.176Z,36.98975361,8,1,[OMNI-22703] Increase code coverage
+267,Val,0,2016-12-02T16:35:42.376Z,28.60126111,1,1,OMNI-22785: getAllFieldsCompareToNoFieldsTest test failed for resttest\TestCluster
+269,Bruce,1,2016-12-02T16:36:06.276Z,18.69765972,1,1,OMNI-22700: No need to print stack trace if user is not authorized correctly
+270,Val,0,2016-12-02T18:06:22.253Z,3.210148333,1,1,OMNI-22937: Some test cases are failed for resttest\TestVirtualMachines
+265,Karen,1,2016-12-02T19:30:25.903Z,44.61052278,9,7,OMNI-22192: SessionGrant rest-automation tests are broken with JAuth CLI changes
+273,Ralph,0,2016-12-02T20:46:48.707Z,0.4511375,4,2,"OMNI-22226: we will now embed the JAuth ticket into the authentication object when created, and return it when asked for."
+272,Bruce,3,2016-12-05T14:37:44.413Z,69.58057111,28,5,"OMNI-22124: List of acceptable sort fields doesn't contains ""state"" attribute for virtual machine object - but it is valid"
+274,Bruce,0,2016-12-05T14:37:54.381Z,39.9059675,11,3,Bumping the REST version to 1.4
+275,Ralph,0,2016-12-05T17:03:45.894Z,0.903781944,1,1,OMNI-22225: make JAuth the default username/password authentication method
+277,Karen,0,2016-12-07T16:58:12.917Z,2.329099444,2,3,"OMNI-23055 SOAK\Stress - User is unable to view\create objects in GUI, associated to cluster"
+278,Ralph,0,2016-12-08T16:43:58.768Z,0.436263611,2,1,"OMNI-22225: until JAuth works on platforms other than VMware, only allow it to be used on VMware"
+276,Brett,1,2016-12-08T17:49:44.695Z,66.95852222,9,5,[OMNI-22703] Increase code coverage for REST API
+279,Bruce,1,2016-12-12T16:55:09.329Z,95.85013917,3,3,OMNI-23260: TEST FAILED: getSessionGrantTokenTest with linked mode vCenters
+280,Brett,5,2016-12-12T21:25:23.841Z,24.64670833,3,4,[HYP-3739] On split repo hyper-v build seeing a few issues with REST.
+284,Ralph,0,2016-12-12T21:53:18.038Z,0.077308611,1,1,"HYP-3739: HVAL seems to have updated the VirtualMachine interface, so had to accomodate that in the REST derived version"
+285,Bruce,0,2016-12-12T22:31:31.382Z,0.650716111,1,1,Add V1_4 content type and use it as the default.
+286,Bruce,0,2016-12-13T17:25:19.993Z,17.86787583,2,1,OMNI-22701: Fix coverity bugs
+283,Bruce,1,2016-12-13T18:07:38.954Z,20.30245722,3,3,OMNI-22349: getInvalidPasswordGrantTokenTest fails when running against a JAuth-based REST service
+281,Bruce,0,2016-12-14T09:45:25.600Z,40.30662917,3,2,Create virtual_machines and policies as needed for the tests
+288,Brett,1,2016-12-14T18:03:44.695Z,0.759451111,1,1,[OMNI-23535] /var/log full due to connection exceptions from vcenter
+290,Ralph,0,2016-12-14T21:11:58.966Z,0.547161389,2,3,Pull fix for OMNI-23535 into Release/him.4
+289,Brett,0,2016-12-14T21:41:11.712Z,2.92872,3,3,[OMNI-23615] BackupAPI call is failing due to BackupState enum called for FailedSnapshot State
+287,Karen,1,2016-12-15T12:09:30.790Z,39.73624,2,4,OMNI-23538: Throw InvalidBodyException when user tries to update empty policy with empty rules
+291,Brett,0,2016-12-15T16:08:32.274Z,15.54539361,10,1,[OMNI-22703] Added few more unit tests and removed some dead code.
+292,Bruce,1,2016-12-15T17:34:13.822Z,1.497969167,1,1,Faster login with multiple tickets.
+293,Val,0,2016-12-16T12:08:07.647Z,18.76695667,1,1,OMNI-21550: copyBackup test is failed in rest-automation when only single backup is present.
+294,Karen,0,2016-12-16T12:08:22.869Z,18.33350333,1,1,Coverity Issue : Resource leak
+296,Val,0,2016-12-19T17:48:24.358Z,75.03961222,1,1,OMNI-23538: Added logic for get policy object that doesn't contain any rules
+295,Ralph,1,2016-12-19T20:14:47.189Z,96.46804056,6,2,Initial OMNI-22226 push - just for VM objects
+300,Bruce,0,2016-12-20T13:32:50.997Z,14.37731083,1,1,Coverity bug fix
+302,Bruce,0,2016-12-21T19:25:11.319Z,1.922865278,5,1,OMNI-22879: Read /var/svtfs/0/myconf/static/svtfs.xml to find management interface if rest-api.conf not found
+303,Bruce,0,2016-12-21T19:25:23.570Z,1.748579167,1,1,DeleteAllObjects - utility method in rest-automation to cleanup the SVA
+304,Bruce,0,2016-12-21T19:25:34.214Z,1.7110425,1,1,OMNI-22701: message using id rather than name.
+305,Bruce,0,2016-12-21T21:19:28.865Z,1.61333,1,1,Better logging of SvtErrorREturnExcecption from JAuth.getSessions().
+301,Val,0,2016-12-22T19:22:19.238Z,28.39976972,1,3,OMNI-22579: Added test case in rest automation when try to fetch objects having limit more than 5000.
+307,Bruce,0,2016-12-23T12:34:32.823Z,37.04351694,5,1,OMNI-22701: Minor coverity fixes
+306,Karen,20,2016-12-23T14:22:12.682Z,41.58295528,11,5,OMNI-3169 POST: Suspend backup policies
+308,Bruce,0,2016-12-23T18:41:33.295Z,19.31971528,2,1,OMNI-22701: coverity fixes
+309,Val,0,2016-12-27T13:49:24.388Z,93.23217278,2,1,OMNI-24260: Delete newly created vm objects for resttests/virtual_machines
+310,Karen,6,2016-12-27T13:49:53.264Z,92.85798028,12,6,OMNI-24095: Delete multiple backups
+312,Bruce,0,2016-12-29T15:17:43.345Z,46.79316194,4,1,OMNI-22701: Coverity fixes
+314,Karen,0,2017-01-02T20:16:06.716Z,96.84302194,4,2,OMNI-24391:Unknown error is occurred when we pass empty string to body of set_retention post method
+315,Val,0,2017-01-03T14:23:08.620Z,100.5658975,2,2,OMNI-24280: Added test cases for delete multiple backups in rest-automation
+313,Bruce,1,2017-01-03T21:02:11.499Z,171.5572475,2,2,OMNI-23763: Log the amount of Java free space every hour
+317,Bruce,0,2017-01-03T21:03:08.127Z,3.211735278,1,1,OMNI-22701: coverity fix for wrong number of params
+318,Brett,0,2017-01-04T15:55:07.508Z,20.18448722,2,4,[OMNI-22701] Fix coverity issue - CID- 25154
+320,Karen,1,2017-01-05T14:06:22.097Z,16.10077778,2,1,OMNI-23942 Add new values to AppAwareVmStatus field
+316,Val,0,2017-01-05T21:34:26.701Z,77.75810833,1,1,OMNI-24197: Suspend/resume backup policies in rest-automation
+322,Brett,0,2017-01-05T21:55:59.020Z,1.940603056,2,1,[HYP-3935] BackupAPI is failing because NodeDAO is Autowired to null value.
+323,Karen,0,2017-01-06T16:49:45.260Z,18.12096556,1,1,OMNI-24506 Jenkins builds fail randomly - testUserCanViewDeletedHives
+321,Ralph,2,2017-01-06T20:04:17.298Z,29.23008639,12,5,Omni 22226: use more flexible hyperproxy call to request HMS information
+319,Karen,7,2017-01-06T22:38:27.307Z,56.19203694,8,6,OMNI-24391: Unknown error is occurred when we pass empty string to body of set_retention post method
+311,Brett,4,2017-01-08T21:53:34.256Z,381.8511303,4,7,[OMNI-10851] hive_query returning 149 hives when max_results is set to 150
+326,Ralph,0,2017-01-09T15:24:19.334Z,0.584762778,1,1,OMNI-22226: removed call to disconnect hyperproxy before attempting to connect because it doesn't add any value to the standard runtime environment
+324,Bruce,0,2017-01-09T15:25:12.874Z,48.43680611,1,1,Commented out logic for enabling DEBUG logging of all SVT and Spring components when needed.
+325,Bruce,12,2017-01-10T13:36:02.003Z,34.68045167,27,4,OMNI-24566: Extract exceptions thrown by REST into a single file.
+327,Val,0,2017-01-12T12:14:28.593Z,51.33437583,1,1,OMNI-24391: [Automation work] Unknown error is occurred when we pass empty string to body of set_retention post method.
+330,Brett,0,2017-01-12T16:24:07.077Z,41.34935,9,2,[OMNI-23422] Make capacity metrics optional fields for omnistack_cluster and host
+328,Brett,1,2017-01-12T19:50:57.267Z,48.59329056,6,2,"[OMNI-24728] ERROR: Invalid input syntax for uuid: ""abcdefgh-1234-ijkl-5678-mnopqrstuvwx"""
+332,Bruce,3,2017-01-16T14:23:34.325Z,67.50378667,5,2,OMNI-3251: 2nd Try - GET: Add hypervisor_is_template to virtual_machines
+331,Deb,1,2017-01-16T14:24:14.102Z,92.980375,1,2,Edit exception messages (OMNI-24567)
+335,Karen,1,2017-01-17T20:32:28.175Z,66.66116694,15,4,OMNI-24689:Simplivity VM Object view is empty on load
+337,Karen,0,2017-01-17T20:33:15.042Z,1.660123056,2,1,OMNI-24792: Validate that federation object_id is empty or missing if object_type is federation for policy pause and resume
+333,Brett,0,2017-01-18T16:17:42.264Z,117.2119797,6,3,"[OMNI-23422] [OMNI-24865] GET/Omnistack_cluster doesn't show ""remote_backup_capacity"" and ""local_backup_capacity"" field, Even if we set show_optional_field as true."
+336,Karen,1,2017-01-19T19:53:29.668Z,50.75679806,11,4,OMNI-2881: OR filtering for GET /api/datastores and GET /api/backups calls.
+339,Bruce,5,2017-01-19T22:14:43.779Z,27.12645111,8,3,"OMNI-24944: cpu_count, memory and virtual_disk_count to virtual_machines OMNI-24957: Add hypervisor_free_space and hypervisor_provisioned_space to virtual_machines"

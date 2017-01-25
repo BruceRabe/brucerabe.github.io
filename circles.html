@@ -1,0 +1,260 @@
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<style type="text/css">
+body{font-family: Arial, sans-serif;font-size:12px;}
+.axis path,.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
+/*.tick line{fill:none;stroke:none;}*/
+.tick text{fill:#999;}
+g.journal.active{cursor:pointer;}
+text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+text.value{font-size:12px;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var REQUESTSCSV = "svt-requests.csv";
+var names = ["Tom","Bruce","Ralph","Brett","Bill","Deb","Karen","Alex","Val"];
+//var names = ["tpham","brabe","rlaporte","bsopariwala","bhays","dfemia","kravilla","arayev","vjurafi"];
+
+// colors from colorbrewer R Dark2 pallette
+//var colors = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E","#E6AB02", "#A6761D", "#666666"];
+// from http://colorbrewer2.org/#type=qualitative&scheme=Paired&n=12
+var colors = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'];
+
+var margin = {top: 20, right: 100, bottom: 0, left: 20},
+	width = 1000,
+	height = 650;
+
+var x = d3.time.scale();
+x.domain([new Date('2015-07-09'),new Date()]);
+x.range([0,width]);
+
+var xAxis = d3.svg.axis()
+	.scale(x)
+	.orient("top");
+
+var y = d3.scale.ordinal().domain(names);
+y.rangePoints([0,names.length-1]);
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.style("margin-left", margin.left + "px")
+	.append("g")
+    .attr("transform", "translate(0,30)")
+    .call(xAxis);
+//	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var maxHoursOutstanding = 0;
+//"ID","Author","Comments","Merge Date","Hours Outstanding","Changed Files","Commits","Title"
+d3.csv(REQUESTSCSV, function(d) {
+  // filter out anyone who is not on the scrum team
+  if (names.indexOf(d.Author) >= 0)
+  {
+      if (d["Hours Outstanding"] > maxHoursOutstanding)
+        maxHoursOutstanding = d["Hours Outstanding"];
+      return {
+        id: d.ID,
+        author: d.Author,
+        comments: +d.Comments,
+        merge_date: new Date(d["Merge Date"]), 
+        hours_outstanding: +d["Hours Outstanding"],
+        changed_files: +d["Changed Files"],
+        commits: +d.Commits,
+        title: d.Title
+      };
+  }
+}, function(error, rows) {
+  if (error) throw error;
+  
+  // draw a circle for each PR
+  var circles = svg.selectAll("circle")
+    .data(rows)
+    .enter()
+    .append("circle")
+    .attr("cx", function(d, i) {
+        // x value is based on date
+        var xval = x(d.merge_date);
+        return xval;
+    })
+    .attr("cy", function(d, i) {
+        // y value is lined up for each author
+        var y = yForAuthor(d.author);
+        if (isNaN(y))
+            return 0;
+        else
+            return y;
+    })
+    .attr("r", function(d,i) {
+        // circle radius is based on the number of files
+        var rval = d.changed_files/1;
+        if (rval <= 1)
+            // too small, so bump it up so we can see it
+            rval = 2;
+        return rval;
+    })
+    .on("mouseover", mouseover)
+    .on("mouseout", mouseout)
+    .on("click", click)
+    .style("fill-opacity", function(d,i) {
+        return calculateOpacity(d);
+    })
+    .style("fill", function(d) {
+        // circle color is based on author
+        var col = colors[y(d.author)];
+        return col;
+    });
+
+  // now create the names of each author to the right
+  var text = svg.selectAll(".name text")
+    .data(names)
+    .enter()
+    .append("text")
+    .attr("y", function(d,i) {
+        return yForAuthor(d);
+    })
+	.attr("x",function(d, i) { 
+        return width+50;
+    })
+	.attr("class","name")
+	.text(function(d){ 
+        return d; 
+    })
+    .style("fill", function(d) { 
+        var col = colors[y(d)];
+        return col;
+    });
+  });
+  
+  function calculateOpacity(d) {
+    return d.hours_outstanding/maxHoursOutstanding + 0.1;
+  }
+    
+  // mouseover shows the PR info
+  function mouseover(pr,i) {
+    // Use D3 to select element, change color and size
+    d3.select(this).style({
+        "fill-opacity": 0.99
+    });
+    
+    // use foreignObject rather than text svg type so that HTML formatting can be used
+    svg.append("foreignObject")
+        .html('<div class"style-me"><p>'+getTooltip(pr)+'</p></div>')
+        .attr({
+            height: 50,
+            width: 800,
+            x: x(pr.merge_date),
+            y: yForAuthor(pr.author),
+            id: calculatePrId(pr)
+        });
+  }
+
+  function mouseout(pr,i) {
+    // put the opacity back to normal
+    var opacity = calculateOpacity(pr);
+    d3.select(this).style({
+        "fill-opacity": opacity
+    });
+    
+    // remove the tooltip text
+    var id = calculatePrId(pr);
+    var t = d3.select("#"+id);
+    t.remove();
+  }
+  
+  function click(pr, i) {
+    console.log(this);
+    console.log(this.nextSibling);
+    console.log(this.previousSibling);
+  }
+  
+  function calculatePrId(pr) {
+    return "t"+pr.id;
+  }
+  
+  function getTooltip(pr) {
+    // add merge_date?
+    return pr.title+"<br># Changed Files: "+pr.changed_files+"<br>Hours PR Outstanding: "+
+    Math.round(pr.hours_outstanding)+"<br># Commits: "+pr.commits+"<br>Merged On: "+pr.merge_date;
+  }
+  
+/*
+        // Specify where to put label of text
+        svg.append("text").attr({
+           id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
+            x: function() { return xScale(d.x) - 30; },
+            y: function() { return yScale(d.y) - 15; }
+        })
+        .text(function() {
+          return [d.x, d.y];  // Value of the text
+        });
+*/        
+/*            
+      var circle = d3.select(this).node();
+      circle.attr("fill-opacity",1.0);
+//      circle.style("fill-opacity",1.0);
+      //.node().parentNode;
+      //d3.select(g).selectAll("circle").style("display","none");
+*/      
+
+  // calculate the y offset based on author
+  function yForAuthor(author) {
+      var yval = y(author);
+      return yval*70+61; 
+  }
+
+  
+        
+
+/*
+		var text = g.selectAll("text")
+			.data(data[j]['articles'])
+			.enter()
+			.append("text");
+
+		var rScale = d3.scale.linear()
+			.domain([0, d3.max(data[j]['articles'], function(d) { return d[1]; })])
+			.range([2, 9]);
+
+
+		text
+			.attr("y", j*20+25)
+			.attr("x",function(d, i) { return xScale(d[0])-5; })
+			.attr("class","value")
+			.text(function(d){ return d[1]; })
+			.style("fill", function(d) { return c(j); })
+			.style("display","none");
+
+		g.append("text")
+			.attr("y", j*20+25)
+			.attr("x",width+20)
+			.attr("class","label")
+			.text(truncate(data[j]['name'],30,"..."))
+			.style("fill", function(d) { return c(j); })
+			.on("mouseover", mouseover)
+			.on("mouseout", mouseout);
+	};
+
+	function mouseover(p) {
+		var g = d3.select(this).node().parentNode;
+		d3.select(g).selectAll("circle").style("display","none");
+		d3.select(g).selectAll("text.value").style("display","block");
+	}
+
+	function mouseout(p) {
+		var g = d3.select(this).node().parentNode;
+		d3.select(g).selectAll("circle").style("display","block");
+		d3.select(g).selectAll("text.value").style("display","none");
+	}
+*/  
+
+
+</script>
+
+<div><hr><p>Note: The radius of each circle is proportional to the number of modified files and the opacity proportional to the amount of time the PR was open.</p></div>
+
+</body>
+</html>
