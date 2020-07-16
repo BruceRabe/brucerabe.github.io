@@ -17,7 +17,6 @@ text.value{font-size:12px;font-weight:bold;}
 
 var REQUESTSCSV = "svt-requests.csv";
 var names = ["Tom","Bruce","Ralph","Brett","Bill","Deb","Karen","Alex","Val"];
-//var names = ["tpham","brabe","rlaporte","bsopariwala","bhays","dfemia","kravilla","arayev","vjurafi"];
 
 // colors from colorbrewer R Dark2 pallette
 //var colors = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E","#E6AB02", "#A6761D", "#666666"];
@@ -29,7 +28,7 @@ var margin = {top: 20, right: 100, bottom: 0, left: 20},
 	height = 650;
 
 var x = d3.time.scale();
-x.domain([new Date('2015-07-09'),new Date()]);
+x.domain([new Date('2015-07-09'),new Date('2017-07-09')]);
 x.range([0,width]);
 
 var xAxis = d3.svg.axis()
